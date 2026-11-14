@@ -15,17 +15,20 @@ CREATE TABLE users (
     password VARCHAR(255) NOT NULL,
     api_token VARCHAR(100) NOT NULL UNIQUE, -- απο apps
 
-    -- Στατιστικά για leaderboard
-    wins INT NOT NULL DEFAULT 0,
-    losses INT NOT NULL DEFAULT 0,
-    draws INT NOT NULL DEFAULT 0,
-    elo INT NOT NULL DEFAULT 1000,
-
     -- Listener για online activity
     last_active TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 ) Engine=InnoDB;
 
+CREATE TABLE leaderboard(
+    user_id INT PRIMARY KEY,
+    wins    INT NOT NULL DEFAULT 0,
+    losses  INT NOT NULL DEFAULT 0,
+    draws   INT NOT NULL DEFAULT 0,
+    elo     INT NOT NULL DEFAULT 1000,
+
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+) Engine=InnoDB;
 
 CREATE TABLE cards(
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -73,13 +76,14 @@ CREATE TABLE games (
     neutral_card_id INT NOT NULL,
 
     -- Lobby state
-    lobby_status ENUM('waiting', 'in_progress', 'finished') NOT NULL DEFAULT 'waiting',
-    lobby_created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    status ENUM('waiting', 'in_progress', 'finished') NOT NULL DEFAULT 'waiting',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 
-    -- Timestamps για timeout
+    -- Timestamps για timeout & διάρκεια
+    turn_duration_seconds SMALLINT NOT NULL DEFAULT 60,
     turn_started_at TIMESTAMP NULL,
-    turn_created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    turn_updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    turn_expires_at TIMESTAMP NULL,
 
     FOREIGN KEY (player1_id) REFERENCES users(id) ON DELETE CASCADE,
     FOREIGN KEY (player2_id) REFERENCES users(id) ON DELETE SET NULL,
@@ -94,7 +98,7 @@ CREATE TABLE game_pieces (
     id INT AUTO_INCREMENT PRIMARY KEY,
     game_id INT NOT NULL,
     piece_code VARCHAR(10) NOT NULL, -- 'p1_m', 'p1_s1' (για λόγους 3JS)
-    owner TINYINT NOT NULL,          -- 1 ή 2 (κοκκινος ή μπλε)
+    owner TINYINT NOT NULL,          -- 1 ή 2 (κόκκινος ή μπλε)
     type ENUM('master', 'student') NOT NULL,
     x TINYINT NOT NULL,              -- 0 - 4
     y TINYINT NOT NULL,              -- 0 - 4
