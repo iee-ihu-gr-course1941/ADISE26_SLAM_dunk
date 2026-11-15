@@ -1,0 +1,89 @@
+/*
+  Σελίδα Leaderboard από το Figma (ADISE2027-ONITAMA → lobbies.html, frame "leaderboard").
+  Η σκηνή πιάνει ΟΛΟ το παράθυρο. Το design είναι 500×250 και κάθε θέση είναι σε px του Figma:
+    --ux = 1px Figma στον οριζόντιο άξονα (πλάτος παραθύρου / 500)
+    --uy = 1px Figma στον κάθετο άξονα   (ύψος παραθύρου / 250)
+    --u  = το μικρότερο από τα δύο → για γράμματα, περιθώρια, γωνίες (να μην παραμορφώνονται)
+  Κάθε στοιχείο με class "at" παίρνει θέση από τα --x/--y/--w/--h στο HTML.
+*/
+/* Γραμματοσειρά Tsigaro (τοπικό αρχείο, άδεια: Free) — για όλα τα κείμενα */
+@font-face {
+  font-family: 'Tsigaro';
+  src: url('fonts/Tsigaro.otf') format('opentype');
+  font-display: swap;
+}
+
+:root {
+  --bg-top: #ffa411;
+  --bg-bottom: #ffef93;
+  --btn-top: #d56502;
+  --btn-bottom: #c58700;
+  --line: #000;
+  --pager-bg: #d9d9d9;
+  --ink: #000;
+  --font: 'Tsigaro', 'Inter', system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+body { background: var(--bg-bottom); font-family: var(--font); color: var(--ink); overflow: hidden; }
+
+.stage {
+  position: fixed;
+  inset: 0;
+  container-type: size;
+  overflow: hidden;
+  background: linear-gradient(to bottom, var(--bg-top), var(--bg-bottom));
+}
+.stage * {
+  --ux: calc(100cqw / 500);
+  --uy: calc(100cqh / 250);
+  --u: min(var(--ux), var(--uy));
+}
+
+.at { position: absolute; left: calc(var(--x) * var(--ux)); top: calc(var(--y) * var(--uy)); }
+.at[style*="--w"] { width: calc(var(--w) * var(--ux)); }
+.at[style*="--h"] { height: calc(var(--h) * var(--uy)); }
+
+/* Όπως το "Fill" του Figma: η εικόνα γεμίζει πάντα το κουτί της (κόβει λίγο στα πλάγια αν χρειαστεί),
+   ώστε οι ίσιες άκρες των εικόνων να μένουν πάνω στα όρια της σελίδας. */
+.deco { pointer-events: none; object-fit: cover; }
+
+/* Περιστροφή όπως στο Figma: γύρω από την πάνω αριστερή γωνία.
+   Το Figma μετράει αριστερόστροφα, το CSS δεξιόστροφα → αρνητικό πρόσημο. */
+.at[style*="--rot"] { transform-origin: 0 0; transform: rotate(calc(var(--rot) * -1deg)); }
+
+button { font: inherit; color: inherit; cursor: pointer; }
+
+.text { font-size: calc(12 * var(--u)); font-weight: 400; line-height: 1.25; white-space: nowrap; }
+
+/* Πίνακας κατάταξης: 13 γραμμές × 14px */
+.board { list-style: none; }
+.board li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: calc(14 * var(--uy));
+  border: max(1px, calc(1 * var(--u))) solid var(--line);
+  background: linear-gradient(to bottom, var(--btn-top), var(--btn-bottom));
+  font-size: calc(12 * var(--u));
+  white-space: nowrap;
+}
+.board li + li { border-top: 0; }
+/* Στο Figma: όνομα στο x=152 (35 μέσα), νίκες στο x=292 (175 μέσα) */
+.board .name { position: absolute; left: calc(35 * var(--ux)); }
+.board .wins { position: absolute; left: calc(175 * var(--ux)); }
+
+/* Σελιδοποίηση: δύο κουτάκια 18×17 με κενό 4px */
+.pager { display: flex; gap: calc(4 * var(--ux)); }
+.pager button {
+  width: calc(18 * var(--ux));
+  height: calc(17 * var(--uy));
+  border: max(1px, calc(1 * var(--u))) solid var(--line);
+  border-radius: calc(3 * var(--u));
+  background: var(--pager-bg);
+  font-size: calc(9 * var(--u));
+  line-height: 1;
+}
+.pager button:hover { filter: brightness(1.08); }
+.pager button:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
