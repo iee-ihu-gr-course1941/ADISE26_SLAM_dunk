@@ -1,0 +1,74 @@
+/*
+  Σελίδα Profile από το Figma (ADISE2027-ONITAMA → lobbies.html, frame "profile").
+  Η σκηνή πιάνει ΟΛΟ το παράθυρο. Το design είναι 500×250 και κάθε θέση είναι σε px του Figma:
+    --ux = 1px Figma στον οριζόντιο άξονα (πλάτος παραθύρου / 500)
+    --uy = 1px Figma στον κάθετο άξονα   (ύψος παραθύρου / 250)
+    --u  = το μικρότερο από τα δύο → για γράμματα, περιθώρια, γωνίες (να μην παραμορφώνονται)
+  Κάθε στοιχείο με class "at" παίρνει θέση από τα --x/--y/--w/--h στο HTML.
+*/
+/* Γραμματοσειρά Tsigaro (τοπικό αρχείο, άδεια: Free) — για όλα τα κείμενα */
+@font-face {
+  font-family: 'Tsigaro';
+  src: url('fonts/Tsigaro.otf') format('opentype');
+  font-display: swap;
+}
+
+:root {
+  --bg-top: #ffa411;
+  --bg-bottom: #ffef93;
+  --btn-top: #d56502;
+  --btn-bottom: #c58700;
+  --line: #000;
+  --ink: #000;
+  --font: 'Tsigaro', 'Inter', system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+body { background: var(--bg-bottom); font-family: var(--font); color: var(--ink); overflow: hidden; }
+
+.stage {
+  position: fixed;
+  inset: 0;
+  container-type: size;
+  overflow: hidden;
+  background: linear-gradient(to bottom, var(--bg-top), var(--bg-bottom));
+}
+.stage * {
+  --ux: calc(100cqw / 500);
+  --uy: calc(100cqh / 250);
+  --u: min(var(--ux), var(--uy));
+}
+
+.at { position: absolute; left: calc(var(--x) * var(--ux)); top: calc(var(--y) * var(--uy)); }
+.at[style*="--w"] { width: calc(var(--w) * var(--ux)); }
+.at[style*="--h"] { height: calc(var(--h) * var(--uy)); }
+
+/* Όπως το "Fill" του Figma: η εικόνα γεμίζει πάντα το κουτί της (κόβει λίγο στα πλάγια αν χρειαστεί),
+   ώστε οι ίσιες άκρες των εικόνων να μένουν πάνω στα όρια της σελίδας. */
+.deco { pointer-events: none; object-fit: cover; }
+
+/* Περιστροφή όπως στο Figma: γύρω από την πάνω αριστερή γωνία.
+   Το Figma μετράει αριστερόστροφα, το CSS δεξιόστροφα → αρνητικό πρόσημο. */
+.at[style*="--rot"] { transform-origin: 0 0; transform: rotate(calc(var(--rot) * -1deg)); }
+
+.text { font-size: calc(12 * var(--u)); font-weight: 400; line-height: 1.25; white-space: nowrap; }
+
+.panel {
+  border: max(1px, calc(1 * var(--u))) solid var(--line);
+  background: linear-gradient(to bottom, var(--btn-top), var(--btn-bottom));
+}
+
+/* Στατιστικά: γραμμές στο y = 47, 66, 85, 105 → ~19px απόσταση, 4px από αριστερά */
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap: calc(4 * var(--uy));
+  padding: calc(3 * var(--uy)) calc(4 * var(--ux));
+  font-size: calc(12 * var(--u));
+  line-height: calc(15 * var(--uy));
+}
+.stats h2 { font: inherit; }
+.stats dl { display: flex; flex-direction: column; gap: calc(4 * var(--uy)); }
+.stats dl div { display: flex; gap: .3em; }
+.stats dd { margin: 0; }

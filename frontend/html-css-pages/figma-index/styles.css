@@ -1,0 +1,79 @@
+/*
+  Αρχική σελίδα από το Figma (ADISE2027-ONITAMA → index.html).
+  Η σκηνή πιάνει ΟΛΟ το παράθυρο. Το design είναι 500×250 και κάθε θέση είναι σε px του Figma:
+    --ux = 1px Figma στον οριζόντιο άξονα (πλάτος παραθύρου / 500)
+    --uy = 1px Figma στον κάθετο άξονα   (ύψος παραθύρου / 250)
+    --u  = το μικρότερο από τα δύο → για γράμματα, περιθώρια, γωνίες (να μην παραμορφώνονται)
+  Κάθε στοιχείο με class "at" παίρνει θέση από τα --x/--y/--w/--h στο HTML.
+*/
+/* Γραμματοσειρά Tsigaro (τοπικό αρχείο, άδεια: Free) — για όλα τα κείμενα */
+@font-face {
+  font-family: 'Tsigaro';
+  src: url('fonts/Tsigaro.otf') format('opentype');
+  font-display: swap;
+}
+
+:root {
+  --bg-top: #ffa411;
+  --bg-bottom: #ffef93;
+  --btn-top: #d56502;
+  --btn-bottom: #c58700;
+  --btn-border: #070606;
+  --ink: #000;
+  --font: 'Tsigaro', 'Inter', system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+body { background: var(--bg-bottom); font-family: var(--font); color: var(--ink); overflow: hidden; }
+
+.stage {
+  position: fixed;
+  inset: 0;
+  container-type: size;
+  overflow: hidden;
+  background: linear-gradient(to bottom, var(--bg-top), var(--bg-bottom));
+}
+.stage * {
+  --ux: calc(100cqw / 500);
+  --uy: calc(100cqh / 250);
+  --u: min(var(--ux), var(--uy));
+}
+
+.at { position: absolute; left: calc(var(--x) * var(--ux)); top: calc(var(--y) * var(--uy)); }
+.at[style*="--w"] { width: calc(var(--w) * var(--ux)); }
+.at[style*="--h"] { height: calc(var(--h) * var(--uy)); }
+
+/* Όπως το "Fill" του Figma: η εικόνα γεμίζει πάντα το κουτί της (κόβει λίγο στα πλάγια αν χρειαστεί),
+   ώστε οι ίσιες άκρες των εικόνων να μένουν πάνω στα όρια της σελίδας. */
+.deco { pointer-events: none; object-fit: cover; }
+
+/* Περιστροφή όπως στο Figma: γύρω από την πάνω αριστερή γωνία.
+   Το Figma μετράει αριστερόστροφα, το CSS δεξιόστροφα → αρνητικό πρόσημο. */
+.at[style*="--rot"] { transform-origin: 0 0; transform: rotate(calc(var(--rot) * -1deg)); }
+
+.logo { line-height: 0; }
+.logo img { width: 100%; height: 100%; object-fit: contain; }
+
+.text { font-size: calc(12 * var(--u)); line-height: 1.25; white-space: nowrap; }
+
+/* Κουμπιά 100×30 με στρογγυλεμένες γωνίες (οδηγία ομάδας) */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(5 * var(--u));
+  border: max(1px, calc(1 * var(--u))) solid var(--btn-border);
+  border-radius: calc(6 * var(--u));
+  background: linear-gradient(to bottom, var(--btn-top), var(--btn-bottom));
+  color: var(--ink);
+  font-size: calc(12 * var(--u));
+  text-decoration: none;
+  white-space: nowrap;
+  transition: filter .15s, transform .08s;
+}
+.btn:hover { filter: brightness(1.1); }
+.btn:active { transform: translateY(1px); }
+.btn:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+
+.btn-icon { flex: none; width: calc(var(--iw) * var(--u)); height: calc(var(--ih) * var(--u)); object-fit: contain; }
