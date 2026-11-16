@@ -5,7 +5,7 @@ class CardSeeder extends Seeder
 {
     public function run(): void
     {
-        //κανω τα cards multi-dimension array, για να τα κάνω bulk insert στο τέλος.
+        //κάνω τα cards multi-dimension array, για να τα κάνω bulk insert στο τέλος.
         $cards = [
             [
                 'id' => 1,
@@ -126,7 +126,7 @@ class CardSeeder extends Seeder
             }
         }
 
-        // bulk insert μεσα στα tables
+        // bulk insert μέσα στα tables
         DB::table('cards')->insert($cardRows);
         DB::table('card_moves')->insert($moveRows);
 

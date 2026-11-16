@@ -11,9 +11,10 @@ SET FOREIGN_KEY_CHECKS = 1;
 CREATE TABLE users (
     -- Βασικο info
     id INT AUTO_INCREMENT PRIMARY KEY,
+    iee_id VARCHAR(50) NOT NULL UNIQUE,
     username VARCHAR(50) NOT NULL UNIQUE,
-    password VARCHAR(255) NOT NULL,
-    api_token VARCHAR(100) NOT NULL UNIQUE, -- απο apps
+    full_name VARCHAR(100) NOT NULL,
+    api_token VARCHAR(100) NOT NULL UNIQUE,
 
     -- Listener για online activity
     last_active TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
