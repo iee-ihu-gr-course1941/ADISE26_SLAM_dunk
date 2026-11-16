@@ -1,8 +1,13 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\GameController;
+use App\Http\Middleware\PostmanTestUser;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:sanctum');
+Route::prefix('v1')
+    ->middleware(PostmanTestUser::class)
+    ->group(function () {
+        Route::get('/game', [GameController::class, 'show']);
+        Route::post('/game/start', [GameController::class, 'start']);
+        Route::post('/game/move', [GameController::class, 'move']);
+    });
