@@ -113,11 +113,33 @@ class GameController extends Controller
                 ]);
             }
 
-            //5 last step now guys yippee, we save the game and post it back to frontend
+            //5.1 cpu random logic utilizing legal moves
+            $hasCPU = $game['mode'] === 'pvc';
+            $isPlaying = $game['status'] = 'in_progress';
+            $isCPUTurn = $game['current_turn'] === 2;
+            if($hasCPU && $isPlaying &&isCPUTurn){
+                $game = $this->playCPUTurn($game);
+            }
+
+
+
+
+            //5.2 last step now guys yippee, we save the game and post it back to frontend
             $this->saveGame($game);
             return $this->gameResponse($game);
         });
     }
+
+    private function playCPUTurn(array $game): array
+    {
+        if($game['mode'] !== 'pvc'){
+            throw new InvalidArgumentException('Invalid game mode');
+        }
+    }
+
+
+
+
 
     private function getCurrentGameId(Request $request, string $action): int
     {
@@ -157,7 +179,7 @@ class GameController extends Controller
         }
         abort(404, 'No game found');
     }
-    
+
 
     //only called inside transactions
     private function loadGame(int $gameId): array
