@@ -115,7 +115,7 @@ class GameController extends Controller
 
             //5.1 cpu random logic utilizing legal moves
             $hasCPU = $game['mode'] === 'pvc';
-            $isPlaying = $game['status'] = 'in_progress';
+            $isPlaying = $game['status'] === 'in_progress';
             $isCPUTurn = $game['current_turn'] === 2;
             if($hasCPU && $isPlaying && $isCPUTurn){
                 $game = $this->playCPUTurn($game);
