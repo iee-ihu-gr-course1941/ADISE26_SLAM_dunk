@@ -135,6 +135,23 @@ class GameController extends Controller
         if($game['mode'] !== 'pvc'){
             throw new InvalidArgumentException('Invalid game mode');
         }
+        if($game['current_turn'] !== 2){
+            throw new InvalidArgumentException('Invalid turn');
+        }
+        if($game['winner_id'] !== null){
+            throw new InvalidArgumentException('Game already won');
+        }
+        $moves = $this->getLegalMoves($game);
+        if(count($moves) === 0){
+            $playerCards = $this->getPlayerCards($game,2);
+            $randomIndex = array_rand($playerCards);
+            $cardId = $playerCards[$randomIndex];
+            return $this->passTurn($game, 2, $cardId);
+        }
+        // array_rand my beloived
+        $randomIndex = array_rand($moves);
+        $move = $moves[$randomIndex];
+        return $this->applyMove($game, 2, $move);
     }
 
 
