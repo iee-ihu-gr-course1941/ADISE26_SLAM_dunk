@@ -117,7 +117,7 @@ class GameController extends Controller
             $hasCPU = $game['mode'] === 'pvc';
             $isPlaying = $game['status'] = 'in_progress';
             $isCPUTurn = $game['current_turn'] === 2;
-            if($hasCPU && $isPlaying &&isCPUTurn){
+            if($hasCPU && $isPlaying && $isCPUTurn){
                 $game = $this->playCPUTurn($game);
             }
 
