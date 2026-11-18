@@ -45,7 +45,7 @@ class AuthController extends Controller
     }
 
     /**
-     * GET /api/v1/login
+     * GET /api/v1/apps-login
      * πάει προς το apps για authorization
      */
     public function redirectToIee(): RedirectResponse
