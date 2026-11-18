@@ -35,4 +35,11 @@ return [
         ],
     ],
 
+    'iee' => [
+        'client_id'     => env('IEE_CLIENT_ID'),
+        'client_secret' => env('IEE_CLIENT_SECRET'),
+        'redirect_uri'  => env('IEE_REDIRECT_URI', 'http://127.0.0.1:8000/api/auth/callback'),
+        'scopes'        => env('IEE_SCOPES', 'profile'),
+    ],
+
 ];
