@@ -111,10 +111,10 @@ class AuthController extends Controller
     }
 
     /**
-     * GET /api/v1/me
+     * GET /api/v1/profile
      * επιστροφή δεδομένων χρήστη + leaderboard stats
      */
-    public function me(Request $request): JsonResponse
+    public function profile(Request $request): JsonResponse
     {
         return response()->json($request->user()->load('leaderboard'));
     }
