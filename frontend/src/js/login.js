@@ -39,8 +39,9 @@ function loginAppsRedirect() {
 async function getUserInfo() {
   try {
     const response = await fetch(APPS_USER_INFORMATION_ENDPOINT, {
+      credentials: "include",
       headers: {
-        credentials: "include", //Poly shmantiko na mpoune auta ta 2, eidika ta application json kai to api_token
+        //Poly shmantiko na mpoune auta ta 2, eidika ta application json kai to api_token
         Accept: "application/json",
       },
     });
