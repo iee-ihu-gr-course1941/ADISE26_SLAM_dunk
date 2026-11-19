@@ -39,7 +39,7 @@ async function getUserInfo() {
   try {
     const response = await fetch(APPS_USER_INFORMATION_ENDPOINT, {
       headers: {
-        api_token: me.token, //Poly shmantiko na mpoune auta ta 2, eidika ta application json
+        api_token: me.token, //Poly shmantiko na mpoune auta ta 2, eidika ta application json kai to api_token
         Accept: "application/json",
       },
     });
