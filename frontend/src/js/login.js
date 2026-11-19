@@ -22,6 +22,7 @@ function getLoginReady() {
   iee_id = document.getElementById("iee_id");
   users_name = document.getElementById("name");
   loginButton.addEventListener("click", loginAppsRedirect);
+  getUserInfo();
 }
 
 //To fetch einai mia function ths javascript pou mas epitrepei na kanoume request se ena endpoint
@@ -39,14 +40,15 @@ async function getUserInfo() {
   try {
     const response = await fetch(APPS_USER_INFORMATION_ENDPOINT, {
       headers: {
-        api_token: me.token, //Poly shmantiko na mpoune auta ta 2, eidika ta application json kai to api_token
+        credentials: "include", //Poly shmantiko na mpoune auta ta 2, eidika ta application json kai to api_token
         Accept: "application/json",
       },
     });
     if (!response.ok) {
       throw new Error("Could not fetch data");
     }
-    console.log(response.data);
+    console.log(response);
+    console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
     const data = await readResponse(response);
     me = data[0];
     showUserInfo(me);
