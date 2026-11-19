@@ -4,18 +4,15 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>frontend</title>
+    <title>Onitama</title>
+    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
   </head>
   <body>
-    <div id="app">
-      <button id="test-iee-login-button">IEE LOGIN</button>
-      <div id="info"></div>
-      <!--Otan einai na ginei to kanoniko UI svise ola ta info, name,iee_id, username, error-message-->
-      <div id="name"></div>
-      <div id="iee_id"></div>
-      <div id="username"></div>
-      <div id="error-message"></div>
-    </div>
+    <!--ο router φορτωνει εδω την καθε σελιδα απο τον φακελο pages-->
+    <div id="main-page" style="width: 1920px; height: 1080px"></div>
+    <!--το fit.js πρεπει να φορτωνει πριν τον router για την σωστη αναπροσαρμογη των σελιδων-->
+    <script src="/fit.js"></script>
+    <script src="/js/router.js"></script>
     <script type="module" src="/src/js/login.js"></script>
   </body>
 </html>

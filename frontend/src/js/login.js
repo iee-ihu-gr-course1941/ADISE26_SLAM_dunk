@@ -13,9 +13,13 @@ let iee_id;
 let users_name;
 window.onload = getLoginReady;
 //Poly sos na kanoume initialize ta pragmata mas me to window on load
+//ΠΡΟΣΘΗΚΗ: να μπορει να την καλει ο router οταν φορτωνει την αρχικη
+window.getLoginReady = getLoginReady;
 
 function getLoginReady() {
   loginButton = document.getElementById("test-iee-login-button");
+  //ΠΡΟΣΘΗΚΗ: αν ο router δεν εχει βαλει ακομα την σελιδα το κουμπι πρακτικα δεν υπαρχει και σταματαμε (θα την καλεσει ο router στην ουσια)
+  if (!loginButton) return;
   errorMessage = document.getElementById("error-message");
   info = document.getElementById("info");
   username = document.getElementById("username");
