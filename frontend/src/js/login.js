@@ -52,11 +52,11 @@ async function getUserInfo(token) {
     const data = await readResponse(response);
     showUserInfo(data);
   } catch (error) {
-    console.log(error);
+    showError(error);
   }
 }
 
-//anti na kanoume 3 then exoume extra functions
+//anti na kanoume 3 then, exoume extra functions
 function readResponse(response) {
   if (!response.ok) {
     throw new Error("Http " + response.status);
@@ -70,9 +70,10 @@ function showUserInfo(data) {
   users_name.innerHTML = data.full_name;
   username.innerHTML = data.username;
   iee_id.innerHTML = data.iee_id;
-  //to data einai ena object, json, to opoio exei ola ta stoixeia pou me epistrefei to laravel backend, opos to username, id, pragmatiko onoma foithth klp, gia na ta emfanisoume prepei na poume data.x opou x to
+  //to data einai ena object, json, to opoio exei ola ta stoixeia pou me epistrefei to laravel backend, opos to username, id,
+  // pragmatiko onoma foithth klp, gia na ta emfanisoume prepei na poume data.x opou x to
   //onoma tou xarakthristikou pou theloume, genika sto json etsi exoume probasi
-  //to data.x => opou x prepei na einai idio akrivos me to xarakthristiko pou theloume na paroume
+  //to data.x => opou x prepei na einai idio akrivos me to xarakthristiko pou theloume na paroume apo to json
 }
 
 //Error handling
