@@ -49,7 +49,6 @@ async function getUserInfo() {
       throw new Error("Could not fetch data");
     }
     console.log(response);
-    console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
     const data = await readResponse(response);
     me = data[0];
     showUserInfo(me);
