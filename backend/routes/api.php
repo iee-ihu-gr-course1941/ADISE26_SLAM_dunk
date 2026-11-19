@@ -14,7 +14,7 @@ Route::prefix('v1')->group(function () {
 
     //Profile Endpoints
     Route::middleware('auth.token')->group(function () {
-        Route::get('/profile', [AuthController::class, 'me']);
+        Route::get('/profile', [AuthController::class, 'profile']);
         Route::post('/logout', [AuthController::class, 'logout']);
     });
 
