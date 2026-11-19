@@ -1,6 +1,7 @@
 //Code for the IEE Login to 1st fetch the user code through the redirect url with a GET request to the apps-login endpoint in the
 //Backend -> Routes -> api/v1/apps/login
 //Non Authenticated Users cannot see the websites data being returned
+var me = { token: null };
 const APPS_LOGIN_ENDPOINT = "http://127.0.0.1:8000/api/v1/apps-login";
 const APPS_USER_INFORMATION_ENDPOINT = "http://127.0.0.1:8000/api/v1/profile";
 let loginButton;
@@ -20,11 +21,7 @@ function getLoginReady() {
   iee_id = document.getElementById("iee_id");
   users_name = document.getElementById("name");
   loginButton.addEventListener("click", loginAppsRedirect);
-  //opote to user token to pairnoume sto onload
-  const token = new URLSearchParams(window.location.search).get("token");
-  if (token) {
-    getUserInfo(token);
-  }
+  getUserInfo();
 }
 
 //To fetch einai mia function ths javascript pou mas epitrepei na kanoume request se ena endpoint
@@ -38,11 +35,11 @@ function loginAppsRedirect() {
 }
 
 //Fetch function
-async function getUserInfo(token) {
+async function getUserInfo() {
   try {
     const response = await fetch(APPS_USER_INFORMATION_ENDPOINT, {
       headers: {
-        Authorization: "Bearer " + token, //Poly shmantiko na mpoune auta ta 2, eidika ta application json
+        api_token: me.token, //Poly shmantiko na mpoune auta ta 2, eidika ta application json
         Accept: "application/json",
       },
     });
@@ -50,7 +47,8 @@ async function getUserInfo(token) {
       throw new Error("Could not fetch data");
     }
     const data = await readResponse(response);
-    showUserInfo(data);
+    me = data[0];
+    showUserInfo(me);
   } catch (error) {
     showError(error);
   }
@@ -64,12 +62,12 @@ function readResponse(response) {
   return response.json();
 }
 
-function showUserInfo(data) {
-  console.log(data);
-  info.innerHTML = data.username;
-  users_name.innerHTML = data.full_name;
-  username.innerHTML = data.username;
-  iee_id.innerHTML = data.iee_id;
+function showUserInfo(me) {
+  console.log(me);
+  info.innerHTML = me.username;
+  users_name.innerHTML = me.full_name;
+  username.innerHTML = me.username;
+  iee_id.innerHTML = me.iee_id;
   //to data einai ena object, json, to opoio exei ola ta stoixeia pou me epistrefei to laravel backend, opos to username, id,
   // pragmatiko onoma foithth klp, gia na ta emfanisoume prepei na poume data.x opou x to
   //onoma tou xarakthristikou pou theloume, genika sto json etsi exoume probasi
