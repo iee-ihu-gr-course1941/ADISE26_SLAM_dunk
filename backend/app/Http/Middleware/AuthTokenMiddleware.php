@@ -16,7 +16,7 @@ class AuthTokenMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $token = $request->cookie('api_token') ?? $request->bearerToken(); //cookie calling, με fallback να πάρει το Bearer token απο το header.
+        $token = $request->bearerToken() ?? $request->header('api_token');
         if (!$token) {
             return response()->json([
                 'message' => 'Unauthenticated. Missing Bearer token.',
