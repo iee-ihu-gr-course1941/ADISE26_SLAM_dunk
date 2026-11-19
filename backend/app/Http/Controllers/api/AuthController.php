@@ -41,7 +41,7 @@ class AuthController extends Controller
         return response()->json([
             'token' => $user->api_token, //για postman testing. delete before deployment
             'user'  => $user->load('leaderboard'),
-        ])->cookie($this->makeTokenCookie($user->api_token));
+        ]);
     }
 
     /**
@@ -99,16 +99,16 @@ class AuthController extends Controller
 
         $user = $this->upsertUserWithToken($ieeUser['iee_id'], $ieeUser['username'], $ieeUser['full_name']);
 
-        $cookie = $this->makeTokenCookie($user->api_token);
         // Αν δεν τρέχει frontend, δείξε κατευθείαν το JSON αποτέλεσμα στον browser
         if (!env('FRONTEND_URL')) {
             return response()->json([
                 'token' => $user->api_token,
                 'user'  => $user->load('leaderboard'),
-            ])->cookie($cookie);
+            ]);
         }
 
-        return redirect()->away($this->frontendUrl())->cookie($cookie);       }
+        return redirect()->away($this->frontendUrl('#token=' . urlencode($user->api_token)));
+    }
 
     /**
      * GET /api/v1/profile
@@ -127,9 +127,7 @@ class AuthController extends Controller
     {
         $request->user()->update(['api_token' => null]);
 
-        return response()
-            ->json(['message' => 'Logged out successfully.'])
-            ->withoutCookie('api_token');
+        return response()->json(['message' => 'Logged out successfully.']);
     }
 
     //Methods for internal use
@@ -221,28 +219,14 @@ class AuthController extends Controller
             'full_name' => Str::limit($fullName, 120, ''),
         ];
     }
-    private function frontendUrl(string $query = ''): string
+    private function frontendUrl(string $suffix = ''): string
     {
         $base = rtrim((string) env('FRONTEND_URL', ''), '/');
         if ($base === '') {
-            return url('/api/v1/profile') . $query;
+            return url('/api/v1/profile') . $suffix;
         }
-        return $base . $query;
+        return $base . '/' . ltrim($suffix, '/');
     }
 
-    private function makeTokenCookie(string $token): \Symfony\Component\HttpFoundation\Cookie
-    {
-        return cookie(
-            name: 'api_token',
-            value: $token,
-            minutes: 60 * 24 * 7, //7 days
-            path: '/',
-            domain: null,
-            secure: app()->environment('production'),
-            httpOnly: true,
-            raw: false,
-            sameSite: 'lax'
-        );
-    }
 }
 
