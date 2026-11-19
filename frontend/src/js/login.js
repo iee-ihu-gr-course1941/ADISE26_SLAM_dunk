@@ -14,7 +14,7 @@ function getLoginReady() {
   errorMessage = document.getElementById("error-message");
   info = document.getElementById("info");
   loginButton.addEventListener("click", loginAppsRedirect);
-  console.log(loginButton.innerHTML);
+  //opote to user token to pairnoume sto onload
   const token = new URLSearchParams(window.location.search).get("token");
   if (token) {
     getUserInfo(token);
@@ -27,14 +27,16 @@ function getLoginReady() {
 //h GET einai proairetikh
 
 function loginAppsRedirect() {
+  //Redirect prokalei to page genika na kanei reload kai den krataei ta data kai den kalei ta functions
   window.location.href = APPS_LOGIN_ENDPOINT;
 }
 
+//Fetch function
 async function getUserInfo(token) {
   try {
     const response = await fetch("http://127.0.0.1:8000/api/v1/profile", {
       headers: {
-        Authorization: "Bearer " + token,
+        Authorization: "Bearer " + token, //Poly shmantiko na mpoune auta ta 2, eidika ta application json
         Accept: "application/json",
       },
     });
@@ -48,6 +50,7 @@ async function getUserInfo(token) {
   }
 }
 
+//anti na kanoume 3 then exoume extra functions
 function readResponse(response) {
   if (!response.ok) {
     throw new Error("Http " + response.status);
@@ -57,9 +60,11 @@ function readResponse(response) {
 
 function showUserInfo(data) {
   console.log(data);
-  info.innerHTML = data.username;
+  info.innerHTML = data.username; //to data einai ena object, json, to opoio exei ola ta stoixeia pou me epistrefei to laravel backend, opos to username, id, pragmatiko onoma foithth klp, gia na ta emfanisoume prepei na poume data.x opou x to
+  //onoma tou xarakthristikou pou theloume, genika sto json etsi exoume probasi
 }
 
+//Error handling
 function showError(error) {
   errorMessage.textContent = "Error from server: " + error;
 }
