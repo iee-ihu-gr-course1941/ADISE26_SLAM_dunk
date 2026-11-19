@@ -39,9 +39,9 @@ class AuthController extends Controller
         );
 
         return response()->json([
-            'token' => $user->api_token,
+            'token' => $user->api_token, //για postman testing. delete before deployment
             'user'  => $user->load('leaderboard'),
-        ]);
+        ])->cookie($this->makeTokenCookie($user->api_token));
     }
 
     /**
@@ -73,7 +73,7 @@ class AuthController extends Controller
      * GET /api/v1/callback
      * παίρνει το token απο το apps, και φτιάχνει token για το frontend.
      */
-    public function handleIeeCallback(Request $request): RedirectResponse
+    public function handleIeeCallback(Request $request): RedirectResponse|JsonResponse
     {
         if ($request->has('error')) {
             return redirect()->away($this->frontendUrl('?auth_error=' . urlencode($request->query('error'))));
@@ -99,16 +99,16 @@ class AuthController extends Controller
 
         $user = $this->upsertUserWithToken($ieeUser['iee_id'], $ieeUser['username'], $ieeUser['full_name']);
 
+        $cookie = $this->makeTokenCookie($user->api_token);
         // Αν δεν τρέχει frontend, δείξε κατευθείαν το JSON αποτέλεσμα στον browser
         if (!env('FRONTEND_URL')) {
             return response()->json([
                 'token' => $user->api_token,
                 'user'  => $user->load('leaderboard'),
-            ]);
+            ])->cookie($cookie);
         }
 
-        return redirect()->away($this->frontendUrl('?token=' . urlencode($user->api_token)));
-    }
+        return redirect()->away($this->frontendUrl())->cookie($cookie);       }
 
     /**
      * GET /api/v1/profile
@@ -127,7 +127,9 @@ class AuthController extends Controller
     {
         $request->user()->update(['api_token' => null]);
 
-        return response()->json(['message' => 'Logged out successfully.']);
+        return response()
+            ->json(['message' => 'Logged out successfully.'])
+            ->withoutCookie('api_token');
     }
 
     //Methods for internal use
@@ -226,6 +228,21 @@ class AuthController extends Controller
             return url('/api/v1/profile') . $query;
         }
         return $base . $query;
+    }
+
+    private function makeTokenCookie(string $token): \Symfony\Component\HttpFoundation\Cookie
+    {
+        return cookie(
+            name: 'api_token',
+            value: $token,
+            minutes: 60 * 24 * 7, //7 days
+            path: '/',
+            domain: null,
+            secure: app()->environment('production'),
+            httpOnly: true,
+            raw: false,
+            sameSite: 'lax'
+        );
     }
 }
 

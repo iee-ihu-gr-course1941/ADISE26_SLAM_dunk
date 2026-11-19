@@ -16,13 +16,11 @@ class AuthTokenMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $token = $request->bearerToken();
-
-
+        $token = $request->cookie('api_token') ?? $request->bearerToken(); //cookie calling, με fallback να πάρει το Bearer token απο το header.
         if (!$token) {
             return response()->json([
                 'message' => 'Unauthenticated. Missing Bearer token.',
-            ], 401); // Error 401 σημαινει Unauthorized
+            ], 401); // Error 401 σημαίνει Unauthorized
         }
 
         $user = User::where('api_token', $token)->first();
@@ -33,9 +31,9 @@ class AuthTokenMiddleware
             ], 401);
         }
 
-        //Ενημέρωση του "last_active" καθε λεπτο (online status purposes)
+        //Ενημέρωση του "last_active" κάθε λεπτό (online status purposes)
         if (!$user->last_active || $user->last_active->lt(now()->subMinute())) {
-            $user->timestamps = false; // Μην κάνεις αχρηστα saves
+            $user->timestamps = false; // Μην κάνεις άχρηστα saves
             $user->update(['last_active' => now()]);
         }
 
