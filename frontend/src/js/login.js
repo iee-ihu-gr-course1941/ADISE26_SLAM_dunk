@@ -3,6 +3,7 @@
 //Non Authenticated Users cannot see the websites data being returned
 var me = { token: null };
 const APPS_LOGIN_ENDPOINT = "http://127.0.0.1:8000/api/v1/apps-login";
+const REDIRECT_URL = "";
 const APPS_USER_INFORMATION_ENDPOINT = "http://127.0.0.1:8000/api/v1/profile";
 let loginButton;
 let errorMessage;
@@ -21,7 +22,6 @@ function getLoginReady() {
   iee_id = document.getElementById("iee_id");
   users_name = document.getElementById("name");
   loginButton.addEventListener("click", loginAppsRedirect);
-  getUserInfo();
 }
 
 //To fetch einai mia function ths javascript pou mas epitrepei na kanoume request se ena endpoint
@@ -46,6 +46,7 @@ async function getUserInfo() {
     if (!response.ok) {
       throw new Error("Could not fetch data");
     }
+    console.log(response.data);
     const data = await readResponse(response);
     me = data[0];
     showUserInfo(me);
