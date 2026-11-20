@@ -51,6 +51,6 @@ class User extends Authenticatable
     }
     public function leaderboard(): User|\Illuminate\Database\Eloquent\Relations\HasOne
     {
-        return $this->hasOne(Leaderboard::class, 'user_id');
+        return $this->hasOne(Leaderboard::class, 'username', 'username');
     }
 }
