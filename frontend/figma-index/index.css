@@ -1,0 +1,296 @@
+/*η δημιουργια του παρακατω κωδικα εγινε αξιοποιωντας το plug in "Convert Figma Design to HTML/CSS" του figma οπου εγινε και το πρωτοτυπο σχεδιο
+μετεπειτα εγιναν αλλαγες οπου ηταν απαραιτητο*/
+:root {
+  --font-family-inter: "Inter", sans-serif;
+  --text-black: rgba(0, 0, 0, 1);
+}
+
+.text-black {
+  color: var(--text-black);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a.prototype-link {
+  text-decoration: none;
+  color: inherit;
+  display: contents;
+}
+
+.background-2 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  /*προσθηκη position, size και gradient απο το figma*/
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 1920px;
+  height: 1080px;
+  background: linear-gradient(
+    to bottom,
+    rgba(204, 125, 0, 1),
+    rgba(255, 240, 152, 1)
+  );
+}
+
+.rectangle-iee-3 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  border: 1px solid rgba(7, 6, 6, 1);
+  /*προσθηκη position, size και gradient απο το figma*/
+  position: absolute;
+  left: 696px;
+  top: 486px;
+  width: 492px;
+  height: 141px;
+  background: linear-gradient(
+    to bottom,
+    rgba(213, 101, 2, 1),
+    rgba(197, 135, 0, 1)
+  );
+}
+
+.rectangle-about-4 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  border: 1px solid rgba(7, 6, 6, 1);
+  /*προσθηκη position, size και gradient απο το figma*/
+  position: absolute;
+  left: 702px;
+  top: 702px;
+  width: 486px;
+  height: 144px;
+  background: linear-gradient(
+    to bottom,
+    rgba(213, 101, 2, 1),
+    rgba(197, 135, 0, 1)
+  );
+}
+
+.text-5 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  text-align: left;
+  font-family: var(--font-family-inter);
+  font-weight: normal;
+  font-size: 64px;
+  text-decoration: none;
+  text-transform: none;
+  color: var(--text-black);
+  /*προσθηκη position, width και white-space*/
+  position: absolute;
+  left: 836px;
+  top: 522px;
+  width: 579px;
+  white-space: nowrap;
+}
+
+.iee-logo-6 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  /*προσθηκη position και size απο το figma (το plug in ειχε width:100% και height:auto)*/
+  position: absolute;
+  left: 706px;
+  top: 499px;
+  width: 122px;
+  height: 115px;
+  max-width: none;
+}
+
+.info-7 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  /*προσθηκη position και size απο το figma (το plug in ειχε width:100% και height:auto)*/
+  position: absolute;
+  left: 722px;
+  top: 721px;
+  width: 106px;
+  height: 106px;
+  max-width: none;
+}
+
+.text-8 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  text-align: left;
+  font-family: var(--font-family-inter);
+  font-weight: normal;
+  font-size: 64px;
+  text-decoration: none;
+  text-transform: none;
+  color: var(--text-black);
+  /*προσθηκη position, width και white-space*/
+  position: absolute;
+  left: 843px;
+  top: 738px;
+  width: 324px;
+  white-space: nowrap;
+}
+
+.text-9 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  text-align: left;
+  font-family: var(--font-family-inter);
+  font-weight: normal;
+  font-size: 48px;
+  text-decoration: none;
+  text-transform: none;
+  color: var(--text-black);
+  /*προσθηκη position, width και white-space*/
+  position: absolute;
+  left: 821px;
+  top: 374px;
+  width: 367px;
+  white-space: nowrap;
+}
+
+.tree-branch-onitama-10 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  opacity: 0.5;
+  /*προσθηκη position και size απο το figma (το plug in ειχε width:100% και height:auto)*/
+  position: absolute;
+  left: 639px;
+  top: 31px;
+  width: 688px;
+  height: 596px;
+  max-width: none;
+}
+
+.temple-with-branches-11 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  opacity: 0.6000000238418579;
+  /*προσθηκη position και size απο το figma (το plug in ειχε width:100% και height:auto)*/
+  position: absolute;
+  left: 0px;
+  top: -103px;
+  width: 668px;
+  height: 1192px;
+  max-width: none;
+}
+
+.tree-with-braches-12 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  opacity: 0.5;
+  /*προσθηκη position και size απο το figma (το plug in ειχε width:100% και height:auto)*/
+  position: absolute;
+  left: 1012px;
+  top: 310px;
+  width: 1028px;
+  height: 779px;
+  max-width: none;
+}
+
+.tree-branch-right-13 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  opacity: 0.699999988079071;
+  /*προσθηκη position και size απο το figma (το plug in ειχε width:100% και height:auto)*/
+  position: absolute;
+  left: 1207px;
+  top: -353px;
+  width: 903px;
+  height: 1012px;
+  max-width: none;
+}
+
+.onitama-logo-14 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  /*προσθηκη position και size απο το figma (το plug in ειχε width:100% και height:auto)*/
+  position: absolute;
+  left: 523px;
+  top: 141px;
+  width: 838px;
+  height: 271px;
+  max-width: none;
+}
+
+.index-1 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  /*fixed μεγεθος καμβα 1920x1080 (position, width, height, overflow)*/
+  position: relative;
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden;
+}
+
+/*μεταφορα των @media sections εκτος του .about-1 που τα τοποθετησε το plug in (πλεον σωστη εμφανιση της σελιδας με αναλογο padding σε καθε παρθυρο)*/
+@media (max-width: 1440px) {
+  .index-1 {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .index-1 {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+/*προσθηκη για τα κουμπια IEE LOGIN και ABOUT*/
+.rectangle-iee-3,
+.rectangle-about-4 {
+  display: block;
+  box-sizing: content-box;
+  padding: 0;
+  cursor: pointer;
+}
+
+.rectangle-iee-3:hover,
+.rectangle-about-4:hover {
+  filter: brightness(1.12);
+}
+
+.rectangle-iee-3:active,
+.rectangle-about-4:active {
+  filter: brightness(0.92);
+}
+
+/*κειμενα, εικονιδια και εικονες (δεντρα, ναος κλπ)*/
+.text-5,
+.text-8,
+.iee-logo-6,
+.info-7,
+.tree-branch-onitama-10,
+.temple-with-branches-11,
+.tree-with-braches-12,
+.tree-branch-right-13,
+.onitama-logo-14 {
+  pointer-events: none;
+}

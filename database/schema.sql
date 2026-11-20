@@ -22,13 +22,13 @@ CREATE TABLE users (
 ) Engine=InnoDB;
 
 CREATE TABLE leaderboard(
-    user_id INT PRIMARY KEY,
+    username VARCHAR(50) PRIMARY KEY,
     wins    INT NOT NULL DEFAULT 0,
     losses  INT NOT NULL DEFAULT 0,
     draws   INT NOT NULL DEFAULT 0,
     elo     INT NOT NULL DEFAULT 1000,
 
-    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+    FOREIGN KEY (username) REFERENCES users(username) ON DELETE CASCADE
 ) Engine=InnoDB;
 
 CREATE TABLE cards(

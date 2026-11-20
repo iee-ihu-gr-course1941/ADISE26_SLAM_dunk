@@ -23,7 +23,10 @@ return new class extends Migration
 
         // Leaderboard
         Schema::create('leaderboard', function (Blueprint $table) {
-            $table->foreignId('user_id')->primary()->constrained('users')->cascadeOnDelete();
+            $table->string('username', 50)->primary();
+            $table->foreign('username')
+                ->references('username')
+                ->on('users')->cascadeOnDelete();
             $table->unsignedInteger('wins')->default(0);
             $table->unsignedInteger('losses')->default(0);
             $table->unsignedInteger('draws')->default(0);

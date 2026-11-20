@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\api;
+namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Leaderboard;
@@ -39,7 +39,7 @@ class AuthController extends Controller
         );
 
         return response()->json([
-            'token' => $user->api_token,
+            'token' => $user->api_token, //για postman testing. delete before deployment
             'user'  => $user->load('leaderboard'),
         ]);
     }
@@ -73,7 +73,7 @@ class AuthController extends Controller
      * GET /api/v1/callback
      * παίρνει το token απο το apps, και φτιάχνει token για το frontend.
      */
-    public function handleIeeCallback(Request $request): RedirectResponse
+    public function handleIeeCallback(Request $request): RedirectResponse|JsonResponse
     {
         if ($request->has('error')) {
             return redirect()->away($this->frontendUrl('?auth_error=' . urlencode($request->query('error'))));
@@ -107,14 +107,14 @@ class AuthController extends Controller
             ]);
         }
 
-        return redirect()->away($this->frontendUrl('?token=' . urlencode($user->api_token)));
+        return redirect()->away($this->frontendUrl('#token=' . urlencode($user->api_token)));
     }
 
     /**
-     * GET /api/v1/me
+     * GET /api/v1/profile
      * επιστροφή δεδομένων χρήστη + leaderboard stats
      */
-    public function me(Request $request): JsonResponse
+    public function profile(Request $request): JsonResponse
     {
         return response()->json($request->user()->load('leaderboard'));
     }
@@ -219,13 +219,14 @@ class AuthController extends Controller
             'full_name' => Str::limit($fullName, 120, ''),
         ];
     }
-    private function frontendUrl(string $query = ''): string
+    private function frontendUrl(string $suffix = ''): string
     {
         $base = rtrim((string) env('FRONTEND_URL', ''), '/');
         if ($base === '') {
-            return url('/api/v1/profile') . $query;
+            return url('/api/v1/profile') . $suffix;
         }
-        return $base . $query;
+        return $base . '/' . ltrim($suffix, '/');
     }
+
 }
 
