@@ -16,7 +16,7 @@ window.onload = getLoginReady;
 //ΠΡΟΣΘΗΚΗ: να μπορει να την καλει ο router οταν φορτωνει την αρχικη
 window.getLoginReady = getLoginReady;
 
-function getLoginReady() {
+export function getLoginReady() {
   loginButton = document.getElementById("test-iee-login-button");
   //ΠΡΟΣΘΗΚΗ: αν ο router δεν εχει βαλει ακομα την σελιδα το κουμπι πρακτικα δεν υπαρχει και σταματαμε (θα την καλεσει ο router στην ουσια)
   if (!loginButton) return;
@@ -33,6 +33,9 @@ function getLoginReady() {
     window.location.pathname + window.location.search,
   );
   me.token = token.slice(7);
+  sessionStorage.setItem("user", JSON.stringify(me));
+  const storedUser = sessionStorage.getItem("user");
+  me = JSON.parse(storedUser);
   if (me.token) {
     getUserInfo();
   }
@@ -64,6 +67,7 @@ async function getUserInfo() {
     console.log(response);
     const data = await readResponse(response);
     me = data;
+    sessionStorage.setItem("user", JSON.stringify(me));
     console.log(data);
     showUserInfo(me);
   } catch (error) {
