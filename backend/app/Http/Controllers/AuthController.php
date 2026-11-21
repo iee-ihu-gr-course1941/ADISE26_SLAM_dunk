@@ -150,7 +150,7 @@ class AuthController extends Controller
 
             //Εννοιαιες εγγραφες στον πινακα
             Leaderboard::firstOrCreate(
-                ['user_id' => $user->id],
+                ['username' => $user->username],
                 [
                     'wins'   => 0,
                     'losses' => 0,

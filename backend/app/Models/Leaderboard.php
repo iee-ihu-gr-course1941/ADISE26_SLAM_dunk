@@ -8,14 +8,12 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Leaderboard extends Model
 {
     protected $table = 'leaderboard';
-
-    protected $primaryKey = 'user_id';
+    protected $primaryKey = 'username';
     public $incrementing = false;
-
     public $timestamps = false;
 
     protected $fillable = [
-        'user_id',
+        'username',
         'wins',
         'losses',
         'draws',
@@ -25,7 +23,7 @@ class Leaderboard extends Model
     protected function casts(): array
     {
         return [
-            'user_id'    => 'integer',
+            'username'   => 'string',
             'wins'       => 'integer',
             'losses'     => 'integer',
             'draws'      => 'integer',

@@ -27,16 +27,19 @@ export function getLoginReady() {
   users_name = document.getElementById("name");
   loginButton.addEventListener("click", loginAppsRedirect);
   const token = window.location.hash;
-  history.replaceState(
-    null,
-    "",
-    window.location.pathname + window.location.search,
-  );
-  me.token = token.slice(7);
-  sessionStorage.setItem("user", JSON.stringify(me));
+  if (token) {
+    history.replaceState(
+      null,
+      "",
+      window.location.pathname + window.location.search,
+    );
+    me.token = token.slice(7);
+    sessionStorage.setItem("user", JSON.stringify(me));
+  }
+
   const storedUser = sessionStorage.getItem("user");
   me = JSON.parse(storedUser);
-  if (me.token) {
+  if (me && me.token) {
     getUserInfo();
   }
 }
@@ -52,7 +55,7 @@ function loginAppsRedirect() {
 }
 
 //Fetch function
-async function getUserInfo() {
+export async function getUserInfo() {
   try {
     const response = await fetch(APPS_USER_INFORMATION_ENDPOINT, {
       headers: {
@@ -76,7 +79,7 @@ async function getUserInfo() {
 }
 
 //anti na kanoume 3 then, exoume extra functions
-function readResponse(response) {
+export function readResponse(response) {
   if (!response.ok) {
     throw new Error("Http " + response.status);
   }
@@ -96,6 +99,6 @@ function showUserInfo(me) {
 }
 
 //Error handling
-function showError(error) {
+export function showError(error) {
   errorMessage.textContent = "Error from server: " + error;
 }

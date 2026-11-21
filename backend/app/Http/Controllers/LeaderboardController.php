@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\DB;
 
-class LeaderboardDumpController extends Controller
+class LeaderboardController extends Controller
 {
     /**
      * GET /api/v1/leaderboard
