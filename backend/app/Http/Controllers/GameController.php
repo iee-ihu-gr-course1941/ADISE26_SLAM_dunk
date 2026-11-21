@@ -113,11 +113,50 @@ class GameController extends Controller
                 ]);
             }
 
-            //5 last step now guys yippee, we save the game and post it back to frontend
+            //5.1 cpu random logic utilizing legal moves
+            $hasCPU = $game['mode'] === 'pvc';
+            $isPlaying = $game['status'] === 'in_progress';
+            $isCPUTurn = $game['current_turn'] === 2;
+            if($hasCPU && $isPlaying && $isCPUTurn){
+                $game = $this->playCPUTurn($game);
+            }
+
+
+
+
+            //5.2 last step now guys yippee, we save the game and post it back to frontend
             $this->saveGame($game);
             return $this->gameResponse($game);
         });
     }
+
+    private function playCPUTurn(array $game): array
+    {
+        if($game['mode'] !== 'pvc'){
+            throw new InvalidArgumentException('Invalid game mode');
+        }
+        if($game['current_turn'] !== 2){
+            throw new InvalidArgumentException('Invalid turn');
+        }
+        if($game['winner_id'] !== null){
+            throw new InvalidArgumentException('Game already won');
+        }
+        $moves = $this->getLegalMoves($game);
+        if(count($moves) === 0){
+            $playerCards = $this->getPlayerCards($game,2);
+            $randomIndex = array_rand($playerCards);
+            $cardId = $playerCards[$randomIndex];
+            return $this->passTurn($game, 2, $cardId);
+        }
+        // array_rand my beloived
+        $randomIndex = array_rand($moves);
+        $move = $moves[$randomIndex];
+        return $this->applyMove($game, 2, $move);
+    }
+
+
+
+
 
     private function getCurrentGameId(Request $request, string $action): int
     {
@@ -157,7 +196,7 @@ class GameController extends Controller
         }
         abort(404, 'No game found');
     }
-    
+
 
     //only called inside transactions
     private function loadGame(int $gameId): array
