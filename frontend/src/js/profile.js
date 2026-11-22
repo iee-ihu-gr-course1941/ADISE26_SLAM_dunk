@@ -40,7 +40,10 @@ async function getUserInfo() {
     const data = await readResponse(response);
     me = data;
     console.log(me);
+    inputUserData(me);
   } catch (error) {
     handleError(error);
   }
 }
+
+function inputUserData(me) {}
