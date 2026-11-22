@@ -15,7 +15,7 @@ window.onload = initializePlayerProfile;
 //Epeidh ta data (px to token kai to username) ta apothikeuoume arxika sto session storage
 //otan kapoios kanei succesfull login, alla auto to info den ginete update (dioti den kaneis kapoios monimos login)
 //ara oi nikes,httes,isopalies kai to elo menei idio me auth thn methodo, ara ta janazhtame apo to server pou epikoinonei me thn bash dedomenon mas
-async function initializePlayerProfile() {
+function initializePlayerProfile() {
   username = document.getElementById("");
   wins = document.getElementById("");
   losses = document.getElementById("");
