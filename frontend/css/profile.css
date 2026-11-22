@@ -1,0 +1,279 @@
+/*η δημιουργια του παρακατω κωδικα εγινε αξιοποιωντας το plug in "Convert Figma Design to HTML/CSS" του figma οπου εγινε και το πρωτοτυπο σχεδιο
+μετεπειτα εγιναν αλλαγες οπου ηταν απαραιτητο*/
+:root {
+  --font-family-inter: 'Inter', sans-serif;
+  --text-black: rgba(0, 0, 0, 1);
+}
+
+.text-black {
+  color: var(--text-black);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a.prototype-link {
+  text-decoration: none;
+  color: inherit;
+  display: contents;
+}
+
+.background-2 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  /*προσθηκη position, size και gradient απο το figma*/
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 1920px;
+  height: 1080px;
+  background: linear-gradient(to bottom, rgba(204, 125, 0, 1), rgba(255, 240, 152, 1));
+}
+
+.tree-branch-onitama-3 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  opacity: 0.5;
+  /*προσθηκη position και size απο το figma (το plug in ειχε width:100% και height:auto)*/
+  position: absolute;
+  left: 639px;
+  top: 31px;
+  width: 688px;
+  height: 596px;
+  max-width: none;
+}
+
+.temple-with-branches-4 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  opacity: 0.6000000238418579;
+  /*προσθηκη position και size απο το figma (το plug in ειχε width:100% και height:auto)*/
+  position: absolute;
+  left: 0px;
+  top: -103px;
+  width: 668px;
+  height: 1192px;
+  max-width: none;
+}
+
+.tree-with-braches-5 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  opacity: 0.5;
+  /*προσθηκη position και size απο το figma (το plug in ειχε width:100% και height:auto)*/
+  position: absolute;
+  left: 1012px;
+  top: 310px;
+  width: 1028px;
+  height: 779px;
+  max-width: none;
+}
+
+.tree-branch-right-6 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  opacity: 0.699999988079071;
+  /*προσθηκη position και size απο το figma (το plug in ειχε width:100% και height:auto)*/
+  position: absolute;
+  left: 1207px;
+  top: -353px;
+  width: 903px;
+  height: 1012px;
+  max-width: none;
+}
+
+.text-7 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  text-align: left;
+  font-family: var(--font-family-inter);
+  font-weight: 700;
+  font-size: 64px;
+  text-decoration: none;
+  text-transform: none;
+  color: var(--text-black);
+  /*προσθηκη position, width και white-space*/
+  position: absolute;
+  left: 369px;
+  top: 163px;
+  width: 373px;
+  white-space: nowrap;
+}
+
+.rectangle-30-8 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  border: 1px solid rgba(0, 0, 0, 1);
+  /*προσθηκη position, size και gradient απο το figma*/
+  position: absolute;
+  left: 369px;
+  top: 248px;
+  width: 1182px;
+  height: 558px;
+  background: linear-gradient(to bottom, rgba(213, 101, 2, 1), rgba(197, 135, 0, 1));
+}
+
+.text-9 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  text-align: left;
+  font-family: var(--font-family-inter);
+  font-weight: normal;
+  font-size: 64px;
+  text-decoration: none;
+  text-transform: none;
+  color: var(--text-black);
+  /*προσθηκη position, width και white-space*/
+  position: absolute;
+  left: 397px;
+  top: 285px;
+  width: 586px;
+  white-space: nowrap;
+}
+
+.text-10 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  text-align: left;
+  font-family: var(--font-family-inter);
+  font-weight: normal;
+  font-size: 64px;
+  text-decoration: none;
+  text-transform: none;
+  color: var(--text-black);
+  /*προσθηκη position, width και white-space*/
+  position: absolute;
+  left: 397px;
+  top: 405px;
+  width: 201px;
+  white-space: nowrap;
+}
+
+.text-11 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  text-align: left;
+  font-family: var(--font-family-inter);
+  font-weight: normal;
+  font-size: 64px;
+  text-decoration: none;
+  text-transform: none;
+  color: var(--text-black);
+  /*προσθηκη position, width και white-space*/
+  position: absolute;
+  left: 397px;
+  top: 535px;
+  width: 284px;
+  white-space: nowrap;
+}
+
+.text-12 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  text-align: left;
+  font-family: var(--font-family-inter);
+  font-weight: normal;
+  font-size: 64px;
+  text-decoration: none;
+  text-transform: none;
+  color: var(--text-black);
+  /*προσθηκη position, width και white-space*/
+  position: absolute;
+  left: 397px;
+  top: 664px;
+  width: 741px;
+  white-space: nowrap;
+}
+
+.text-13 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  text-align: left;
+  font-family: var(--font-family-inter);
+  font-weight: 700;
+  font-size: 80px;
+  text-decoration: none;
+  text-transform: none;
+  color: var(--text-black);
+  /*προσθηκη position, width και white-space*/
+  position: absolute;
+  left: 844px;
+  top: 85px;
+  width: 725px;
+  white-space: nowrap;
+}
+
+.profile-1 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  /*fixed μεγεθος καμβα 1920x1080 (position, width, height, overflow)*/
+  position: relative;
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden;
+}
+
+/*ΑΛΛΑΓΗ κουμπι επιστροφης κατω απο το πλαισιο, με το ιδιο στυλ με τα κουμπια της αρχικης*/
+.profile-back-button {
+  position: absolute;
+  left: 369px;
+  top: 860px;
+  width: 300px;
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0, 0, 0, 1);
+  background: linear-gradient(to bottom, rgba(213, 101, 2, 1), rgba(197, 135, 0, 1));
+  font-family: var(--font-family-inter);
+  font-size: 56px;
+  color: var(--text-black);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.profile-back-button:hover {
+  filter: brightness(1.1);
+}
+
+/*μεταφορα των @media sections εκτος του .about-1 που τα τοποθετησε το plug in (πλεον σωστη εμφανιση της σελιδας με αναλογο padding σε καθε παρθυρο)*/
+@media (max-width: 1440px) {
+  .profile-1 {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-1 {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
