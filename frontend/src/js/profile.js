@@ -23,6 +23,9 @@ function initializePlayerProfile() {
   losses = document.getElementById("");
   elo = document.getElementById("");
   draws = document.getElementById("");
+  last_active = document.getElementById("");
+  full_name = document.getElementById("");
+  iee_id = document.getElementById("");
 }
 
 async function getUserInfo() {
