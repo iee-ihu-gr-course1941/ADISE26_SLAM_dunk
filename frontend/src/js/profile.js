@@ -22,3 +22,8 @@ function initializePlayerProfile() {
   elo = document.getElementById("");
   draws = document.getElementById("");
 }
+
+async function getUserInfo() {
+  try {
+  } catch (error) {}
+}
