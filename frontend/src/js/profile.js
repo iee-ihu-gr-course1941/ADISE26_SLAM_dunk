@@ -27,6 +27,7 @@ function initializePlayerProfile() {
   last_active = document.getElementById("");
   full_name = document.getElementById("");
   iee_id = document.getElementById("");
+  getUserInfo();
 }
 
 async function getUserInfo() {
