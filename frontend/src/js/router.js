@@ -19,9 +19,13 @@ const handleLocation = async () => {
   const route = routes[path] || routes[404];
   const html = await fetch(route).then((data) => data.text());
   document.getElementById("main-page").innerHTML = html;
-  //ΠΡΟΣΘΗΚΗ: αν η σελιδα εχει το κουμπι του IEE login το συνδεουμε με το login.js
+  //αν η σελιδα εχει το κουμπι του IEE login το συνδεουμε με το login.js
   if (window.getLoginReady) {
     window.getLoginReady();
+  }
+  //οταν ανοιγει το leaderboard φερνουμε τους παικτες απο το backend
+  if (path === "/leaderboard" && window.initLeaderboard) {
+    window.initLeaderboard();
   }
   //το fit.js ξαναπροσαρμοζει την νεα σελιδα στο παραθυρο
   if (window.fitSetup) {
