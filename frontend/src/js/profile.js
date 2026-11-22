@@ -8,7 +8,7 @@ let elo; // metablhth gia to elo apo to response tou server
 let username; // metablhth gia to username tou xrhsth sto apps
 let full_name; // metablhth gia to plhrh onoma tou xrhsth sto apps
 let iee_id; // metablhth gia to iee_id tou xrhsth sto apps
-const storedUser = sessionStorage("user"); //Pairnoume ton stored user apo to session storage pou apothukeusame sto 1o login tou xrhsth
+const storedUser = sessionStorage.getItem("user"); //Pairnoume ton stored user apo to session storage pou apothukeusame sto 1o login tou xrhsth
 let me = JSON.parse(storedUser);
 window.onload = initializePlayerProfile;
 
