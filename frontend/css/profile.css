@@ -148,14 +148,14 @@ a.prototype-link {
   text-align: left;
   font-family: var(--font-family-inter);
   font-weight: normal;
-  font-size: 64px;
+  font-size: 55px;
   text-decoration: none;
   text-transform: none;
   color: var(--text-black);
   /*προσθηκη position, width και white-space*/
   position: absolute;
-  left: 397px;
-  top: 285px;
+  left: 20px;
+  top: 10px;
   width: 586px;
   white-space: nowrap;
 }
@@ -167,14 +167,14 @@ a.prototype-link {
   text-align: left;
   font-family: var(--font-family-inter);
   font-weight: normal;
-  font-size: 64px;
+  font-size: 40px;
   text-decoration: none;
   text-transform: none;
   color: var(--text-black);
   /*προσθηκη position, width και white-space*/
   position: absolute;
-  left: 397px;
-  top: 405px;
+  left: 20px;
+  top: 100px;
   width: 201px;
   white-space: nowrap;
 }
@@ -186,14 +186,14 @@ a.prototype-link {
   text-align: left;
   font-family: var(--font-family-inter);
   font-weight: normal;
-  font-size: 64px;
+  font-size: 40px;
   text-decoration: none;
   text-transform: none;
   color: var(--text-black);
   /*προσθηκη position, width και white-space*/
   position: absolute;
-  left: 397px;
-  top: 535px;
+  left: 20px;
+  top: 150px;
   width: 284px;
   white-space: nowrap;
 }
@@ -205,14 +205,14 @@ a.prototype-link {
   text-align: left;
   font-family: var(--font-family-inter);
   font-weight: normal;
-  font-size: 64px;
+  font-size: 40px;
   text-decoration: none;
   text-transform: none;
   color: var(--text-black);
   /*προσθηκη position, width και white-space*/
   position: absolute;
-  left: 397px;
-  top: 664px;
+  left: 20px;
+  top: 300px;
   width: 741px;
   white-space: nowrap;
 }
@@ -224,14 +224,14 @@ a.prototype-link {
   text-align: left;
   font-family: var(--font-family-inter);
   font-weight: normal;
-  font-size: 64px;
+  font-size: 40px;
   text-decoration: none;
   text-transform: none;
   color: var(--text-black);
   /*προσθηκη position, width και white-space*/
   position: absolute;
-  left: 397px;
-  top: 664px;
+  left: 20px;
+  top: 250px;
   width: 741px;
   white-space: nowrap;
 }
@@ -243,14 +243,14 @@ a.prototype-link {
   text-align: left;
   font-family: var(--font-family-inter);
   font-weight: normal;
-  font-size: 64px;
+  font-size: 40px;
   text-decoration: none;
   text-transform: none;
   color: var(--text-black);
   /*προσθηκη position, width και white-space*/
   position: absolute;
-  left: 397px;
-  top: 664px;
+  left: 20px;
+  top: 200px;
   width: 741px;
   white-space: nowrap;
 }
@@ -262,14 +262,14 @@ a.prototype-link {
   text-align: left;
   font-family: var(--font-family-inter);
   font-weight: 700;
-  font-size: 80px;
+  font-size: 55px;
   text-decoration: none;
   text-transform: none;
   color: var(--text-black);
   /*προσθηκη position, width και white-space*/
   position: absolute;
-  left: 844px;
-  top: 85px;
+  left: 800px;
+  top: 40px;
   width: 725px;
   white-space: nowrap;
 }
@@ -288,8 +288,8 @@ a.prototype-link {
 /*ΑΛΛΑΓΗ κουμπι επιστροφης κατω απο το πλαισιο, με το ιδιο στυλ με τα κουμπια της αρχικης*/
 .profile-back-button {
   position: absolute;
-  left: 369px;
-  top: 860px;
+  left: 20px;
+  top: 20px;
   width: 300px;
   height: 110px;
   display: flex;

@@ -1,7 +1,8 @@
 //Code for the IEE Login to 1st fetch the user code through the redirect url with a GET request to the apps-login endpoint in the
 //Backend -> Routes -> api/v1/apps/login
 //Non Authenticated Users cannot see the websites data being returned
-var me = { token: null };
+var me = {};
+
 const APPS_LOGIN_ENDPOINT = "http://127.0.0.1:8000/api/v1/apps-login";
 const REDIRECT_URL = "";
 const APPS_USER_INFORMATION_ENDPOINT = "http://127.0.0.1:8000/api/v1/profile";
@@ -36,6 +37,7 @@ export function getLoginReady() {
     me.token = token.slice(7);
     sessionStorage.setItem("user", JSON.stringify(me));
   }
+  console.log(me.token);
 
   const storedUser = sessionStorage.getItem("user");
   me = JSON.parse(storedUser);
