@@ -48,4 +48,13 @@ async function getUserInfo() {
   }
 }
 
-function inputUserData(me) {}
+function inputUserData(me) {
+  username.textContent = me.username;
+  iee_id.textContent = me.iee_id;
+  full_name.textContent = me.full_name;
+  wins.textContent = me.leaderboard.wins;
+  elo.textContent = me.leaderboard.elo;
+  draws.textContent = me.leaderboard.draws;
+  losses.textContent = me.leaderboard.losses;
+  last_active.textContent = me.last_active;
+}
