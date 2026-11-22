@@ -1,0 +1,21 @@
+<!--περιεχει μονο το body και το css της σελιδας χωρις html/head (το βαζει ο router μεσα στο main-page)-->
+<link rel="stylesheet" href="/css/leaderboard.css" />
+<div class="leaderboard-page">
+  <!--εικονες του background-->
+  <img src="/css/images/temple-with-branches.png" class="leaderboard-temple" alt="" />
+  <img src="/css/images/tree-branch-onitama.png" class="leaderboard-branch-onitama" alt="" />
+  <img src="/css/images/tree-with-braches.png" class="leaderboard-tree" alt="" />
+  <img src="/css/images/tree-branch-right.png" class="leaderboard-branch-right" alt="" />
+
+  <h1 class="leaderboard-title">Leaderboard</h1>
+
+  <!--οι 13 γραμμες με τους παικτες τις φτιαχνει το leaderboard.js-->
+  <ol id="leaderboard-list" class="leaderboard-list"></ol>
+
+  <!--σελιδα και βελακια για την προηγουμενη/επομενη σελιδα του leaderboard-->
+  <div class="leaderboard-pagination">
+    <span id="leaderboard-page-number" class="leaderboard-page-number"></span>
+    <button type="button" id="prev-page-button" class="leaderboard-arrow" aria-label="previous page">&lt;</button>
+    <button type="button" id="next-page-button" class="leaderboard-arrow" aria-label="next page">&gt;</button>
+  </div>
+</div>

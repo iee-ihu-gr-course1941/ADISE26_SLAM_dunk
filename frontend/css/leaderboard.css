@@ -1,0 +1,143 @@
+.leaderboard-page {
+  position: relative;
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden;
+  font-family: "Inter", sans-serif;
+  color: #000;
+  background: linear-gradient(to bottom, #cc7d00, #fff098);
+}
+
+/*εικονες του background*/
+.leaderboard-page img {
+  position: absolute;
+  max-width: none;
+  pointer-events: none;
+}
+
+.leaderboard-temple {
+  left: 0;
+  top: -103px;
+  width: 668px;
+  height: 1192px;
+  opacity: 0.6;
+}
+
+.leaderboard-branch-onitama {
+  left: 639px;
+  top: 31px;
+  width: 688px;
+  height: 596px;
+  opacity: 0.5;
+}
+
+.leaderboard-tree {
+  left: 1012px;
+  top: 310px;
+  width: 1028px;
+  height: 779px;
+  opacity: 0.5;
+}
+
+.leaderboard-branch-right {
+  left: 1207px;
+  top: -353px;
+  width: 903px;
+  height: 1012px;
+  opacity: 0.7;
+}
+
+.leaderboard-title {
+  position: absolute;
+  top: 33px;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  font-size: 64px;
+  font-weight: 700;
+}
+
+/*η λιστα με τις 13 γραμμες*/
+.leaderboard-list {
+  position: absolute;
+  left: 260px;
+  top: 126px;
+  width: 1445px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* θεση, ονομα, elo, νικες/ηττες/ισοπαλιες του leaderboard*/
+.leaderboard-row {
+  display: grid;
+  grid-template-columns: 130px 1fr 280px 360px;
+  align-items: center;
+  height: 63px;
+  padding: 0 24px;
+  box-sizing: border-box;
+  border: 1px solid #000;
+  background: linear-gradient(to bottom, #d56502, #c58700);
+  font-size: 40px;
+  white-space: nowrap;
+}
+
+/*για να μην διπλασιαζεται η γραμμη αναμεσα σε δυο γραμμες*/
+.leaderboard-row + .leaderboard-row {
+  border-top: none;
+}
+
+.leaderboard-username {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.leaderboard-elo,
+.leaderboard-record {
+  text-align: right;
+}
+
+/*μηνυμα για οταν δεν υπαρχουν παικτες ή αποτυχει το fetch*/
+.leaderboard-message {
+  grid-column: 1 / -1;
+  text-align: center;
+}
+
+/*σελιδα και βελακια κατω δεξια*/
+.leaderboard-pagination {
+  position: absolute;
+  right: 215px;
+  top: 958px;
+  display: flex;
+  align-items: center;
+  gap: 21px;
+}
+
+.leaderboard-page-number {
+  margin-right: 12px;
+  font-size: 40px;
+}
+
+.leaderboard-arrow {
+  width: 96px;
+  height: 78px;
+  padding: 0;
+  border: 1px solid #000;
+  background: #d9d9d9;
+  font-family: "Inter", sans-serif;
+  font-size: 64px;
+  line-height: 1;
+  color: #000;
+  cursor: pointer;
+}
+
+.leaderboard-arrow:hover:not(:disabled) {
+  filter: brightness(1.1);
+}
+
+/*για οταν δεν υπαρχει προηγουμενη/επομενη σελιδα*/
+.leaderboard-arrow:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
