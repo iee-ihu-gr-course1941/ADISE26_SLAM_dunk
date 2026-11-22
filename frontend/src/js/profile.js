@@ -45,6 +45,7 @@ async function getUserInfo() {
     console.log(me);
     inputUserData(me);
   } catch (error) {
+    console.log(error);
     handleError(error);
   }
 }
