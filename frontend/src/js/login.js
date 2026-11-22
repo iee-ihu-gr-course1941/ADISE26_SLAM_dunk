@@ -2,7 +2,7 @@
 //Backend -> Routes -> api/v1/apps/login
 //Non Authenticated Users cannot see the websites data being returned
 var me = {};
-
+var tokenApps = "";
 const APPS_LOGIN_ENDPOINT = "http://127.0.0.1:8000/api/v1/apps-login";
 const REDIRECT_URL = "";
 const APPS_USER_INFORMATION_ENDPOINT = "http://127.0.0.1:8000/api/v1/profile";
@@ -34,14 +34,14 @@ export function getLoginReady() {
       "",
       window.location.pathname + window.location.search,
     );
-    me.token = token.slice(7);
-    sessionStorage.setItem("user", JSON.stringify(me));
+    tokenApps = token.slice(7);
+    sessionStorage.setItem("token", JSON.stringify(tokenApps));
   }
-  console.log(me.token);
+  console.log(me);
 
-  const storedUser = sessionStorage.getItem("user");
-  me = JSON.parse(storedUser);
-  if (me && me.token) {
+  const storedToken = sessionStorage.getItem("token");
+  me = JSON.parse(storedToken);
+  if (me) {
     getUserInfo();
   }
 }
@@ -62,7 +62,7 @@ export async function getUserInfo() {
     const response = await fetch(APPS_USER_INFORMATION_ENDPOINT, {
       headers: {
         //Poly shmantiko na mpoune auta ta 2, eidika ta application json kai to api_token
-        Authorization: `Bearer ${me.token}`,
+        Authorization: `Bearer ${me}`,
         Accept: "application/json",
       },
     });
