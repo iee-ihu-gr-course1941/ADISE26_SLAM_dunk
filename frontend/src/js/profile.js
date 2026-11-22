@@ -19,14 +19,15 @@ window.initializePlayerProfile = initializePlayerProfile;
 //otan kapoios kanei succesfull login, alla auto to info den ginete update (dioti den kaneis kapoios monimos login)
 //ara oi nikes,httes,isopalies kai to elo menei idio me auth thn methodo, ara ta janazhtame apo to server pou epikoinonei me thn bash dedomenon mas
 function initializePlayerProfile() {
-  username = document.getElementById("");
-  wins = document.getElementById("");
-  losses = document.getElementById("");
-  elo = document.getElementById("");
-  draws = document.getElementById("");
-  last_active = document.getElementById("");
-  full_name = document.getElementById("");
-  iee_id = document.getElementById("");
+  //tha ta gemiso me ta id ton html elements otan tha einai etoimo to html
+  username = document.getElementById(""); //html id for username text
+  wins = document.getElementById(""); //html id for wins text
+  losses = document.getElementById(""); //html id for losses text
+  elo = document.getElementById(""); //html id for elo text
+  draws = document.getElementById(""); //html id for draws text
+  last_active = document.getElementById(""); //html id for last active text
+  full_name = document.getElementById(""); //html id for full_name text
+  iee_id = document.getElementById(""); //html id for iee_id text
   getUserInfo();
 }
 
