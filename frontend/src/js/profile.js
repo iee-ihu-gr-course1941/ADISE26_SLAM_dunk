@@ -12,6 +12,7 @@ let iee_id; // metablhth gia to iee_id tou xrhsth sto apps
 const storedUser = sessionStorage.getItem("user"); //Pairnoume ton stored user apo to session storage pou apothukeusame sto 1o login tou xrhsth
 let me = JSON.parse(storedUser);
 window.onload = initializePlayerProfile;
+window.initializePlayerProfile = initializePlayerProfile;
 
 //Logos pou janastelno get gia to player profile info
 //Epeidh ta data (px to token kai to username) ta apothikeuoume arxika sto session storage
