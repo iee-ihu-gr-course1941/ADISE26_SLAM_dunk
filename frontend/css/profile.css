@@ -1,7 +1,7 @@
 /*η δημιουργια του παρακατω κωδικα εγινε αξιοποιωντας το plug in "Convert Figma Design to HTML/CSS" του figma οπου εγινε και το πρωτοτυπο σχεδιο
 μετεπειτα εγιναν αλλαγες οπου ηταν απαραιτητο*/
 :root {
-  --font-family-inter: 'Inter', sans-serif;
+  --font-family-inter: "Inter", sans-serif;
   --text-black: rgba(0, 0, 0, 1);
 }
 
@@ -42,7 +42,11 @@ a.prototype-link {
   top: 0px;
   width: 1920px;
   height: 1080px;
-  background: linear-gradient(to bottom, rgba(204, 125, 0, 1), rgba(255, 240, 152, 1));
+  background: linear-gradient(
+    to bottom,
+    rgba(204, 125, 0, 1),
+    rgba(255, 240, 152, 1)
+  );
 }
 
 .tree-branch-onitama-3 {
@@ -101,7 +105,7 @@ a.prototype-link {
   max-width: none;
 }
 
-.text-7 {
+.username-text {
   flex-grow: 0;
   flex-shrink: 1;
   flex-basis: auto;
@@ -120,7 +124,7 @@ a.prototype-link {
   white-space: nowrap;
 }
 
-.rectangle-30-8 {
+.player-stats-div {
   flex-grow: 0;
   flex-shrink: 1;
   flex-basis: auto;
@@ -131,10 +135,13 @@ a.prototype-link {
   top: 248px;
   width: 1182px;
   height: 558px;
-  background: linear-gradient(to bottom, rgba(213, 101, 2, 1), rgba(197, 135, 0, 1));
+  background: linear-gradient(
+    to bottom,
+    rgba(213, 101, 2, 1),
+    rgba(197, 135, 0, 1));
 }
 
-.text-9 {
+.player-stats-heading {
   flex-grow: 0;
   flex-shrink: 1;
   flex-basis: auto;
@@ -153,7 +160,7 @@ a.prototype-link {
   white-space: nowrap;
 }
 
-.text-10 {
+.wins-text {
   flex-grow: 0;
   flex-shrink: 1;
   flex-basis: auto;
@@ -172,7 +179,7 @@ a.prototype-link {
   white-space: nowrap;
 }
 
-.text-11 {
+.losses-text {
   flex-grow: 0;
   flex-shrink: 1;
   flex-basis: auto;
@@ -191,7 +198,7 @@ a.prototype-link {
   white-space: nowrap;
 }
 
-.text-12 {
+.elo-text {
   flex-grow: 0;
   flex-shrink: 1;
   flex-basis: auto;
@@ -210,7 +217,45 @@ a.prototype-link {
   white-space: nowrap;
 }
 
-.text-13 {
+.win-percentage-text {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  text-align: left;
+  font-family: var(--font-family-inter);
+  font-weight: normal;
+  font-size: 64px;
+  text-decoration: none;
+  text-transform: none;
+  color: var(--text-black);
+  /*προσθηκη position, width και white-space*/
+  position: absolute;
+  left: 397px;
+  top: 664px;
+  width: 741px;
+  white-space: nowrap;
+}
+
+.draws-text {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  text-align: left;
+  font-family: var(--font-family-inter);
+  font-weight: normal;
+  font-size: 64px;
+  text-decoration: none;
+  text-transform: none;
+  color: var(--text-black);
+  /*προσθηκη position, width και white-space*/
+  position: absolute;
+  left: 397px;
+  top: 664px;
+  width: 741px;
+  white-space: nowrap;
+}
+
+.profile-heading-div {
   flex-grow: 0;
   flex-shrink: 1;
   flex-basis: auto;
@@ -251,7 +296,11 @@ a.prototype-link {
   align-items: center;
   justify-content: center;
   border: 1px solid rgba(0, 0, 0, 1);
-  background: linear-gradient(to bottom, rgba(213, 101, 2, 1), rgba(197, 135, 0, 1));
+  background: linear-gradient(
+    to bottom,
+    rgba(213, 101, 2, 1),
+    rgba(197, 135, 0, 1)
+  );
   font-family: var(--font-family-inter);
   font-size: 56px;
   color: var(--text-black);

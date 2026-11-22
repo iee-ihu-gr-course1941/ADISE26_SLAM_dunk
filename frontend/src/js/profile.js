@@ -14,7 +14,6 @@ console.log(storedUser); //for testing purposes
 console.log("Stored user retrieved from the session storage");
 let me = JSON.parse(storedUser);
 console.log(me); //gia testing
-window.onload = initializePlayerProfile;
 window.initializePlayerProfile = initializePlayerProfile;
 
 //Logos pou janastelno get gia to player profile info
@@ -63,3 +62,5 @@ function inputUserData(me) {
   losses.textContent = me.leaderboard.losses;
   last_active.textContent = me.last_active;
 }
+
+initializePlayerProfile();

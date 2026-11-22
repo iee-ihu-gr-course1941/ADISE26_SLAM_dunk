@@ -27,6 +27,10 @@ const handleLocation = async () => {
   if (path === "/leaderboard" && window.initLeaderboard) {
     window.initLeaderboard();
   }
+  //Otan anoigei to profile fernoume tis plhrofories tou paikth apo to backend
+  if(path === "/profile" && window.initializePlayerProfile){
+    window.initializePlayerProfile();
+  }
   //το fit.js ξαναπροσαρμοζει την νεα σελιδα στο παραθυρο
   if (window.fitSetup) {
     window.fitSetup();
