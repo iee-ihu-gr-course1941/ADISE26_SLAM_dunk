@@ -1,3 +1,5 @@
+import { handleError, readResponse } from "./login.js";
+const APPS_USER_PROFILE_ENDPOINT = "http://127.0.0.1:8000/api/v1/profile";
 let list; //arxikes metablhtes
 let wins; // metablhth gia ta wins pou tha paroume apo to response tou server
 let losses; // metablhth gia ta losses pou tha paroume apo to response tou server
@@ -25,5 +27,17 @@ function initializePlayerProfile() {
 
 async function getUserInfo() {
   try {
-  } catch (error) {}
+    const response = await fetch(APPS_USER_PROFILE_ENDPOINT, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${me.token}`,
+        Accept: "application/json",
+      },
+    });
+    const data = await readResponse(response);
+    me = data;
+    console.log(me);
+  } catch (error) {
+    handleError(error);
+  }
 }
