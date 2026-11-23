@@ -175,14 +175,18 @@ a.prototype-link {
   font-size: 40px;
   text-decoration: none;
   text-transform: none;
-  color: var(--text-black);
+  color: #00b86b;
   /*προσθηκη position, width και white-space*/
   position: absolute;
   left: 20px;
-  top: 100px;
-  width: 201px;
+  top: 90px;
+  width: 250px;
   white-space: nowrap;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.15);
+  padding: 6px 14px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.55);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.15);
 }
 
 .losses-text {
@@ -195,14 +199,17 @@ a.prototype-link {
   font-size: 40px;
   text-decoration: none;
   text-transform: none;
-  color: var(--text-black);
+  color: #ff224e;
   /*προσθηκη position, width και white-space*/
   position: absolute;
   left: 20px;
-  top: 150px;
-  width: 284px;
+  top: 160px;
+  width: 250px;
   white-space: nowrap;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.15);
+  padding: 6px 14px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.55);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.15);
 }
 
 .elo-text {
@@ -255,14 +262,18 @@ a.prototype-link {
   font-size: 40px;
   text-decoration: none;
   text-transform: none;
-  color: var(--text-black);
+  color: #ffa116;
   /*προσθηκη position, width και white-space*/
   position: absolute;
   left: 20px;
-  top: 200px;
-  width: 741px;
+  top: 230px;
+  width: 250px;
   white-space: nowrap;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.15);
+  padding: 6px 14px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.55);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.15);
 }
 
 .profile-heading-div {
