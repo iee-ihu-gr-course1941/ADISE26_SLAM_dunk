@@ -1,0 +1,989 @@
+/*η δημιουργια του παρακατω κωδικα εγινε αξιοποιωντας το plug in "Convert Figma Design to HTML/CSS" του figma οπου εγινε και το πρωτοτυπο σχεδιο
+μετεπειτα εγιναν αλλαγες οπου ηταν απαραιτητο*/
+:root {
+  --font-family-inter: 'Inter', sans-serif;
+  --text-black: rgba(0, 0, 0, 1);
+}
+
+.text-black {
+  color: var(--text-black);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a.prototype-link {
+  text-decoration: none;
+  color: inherit;
+  display: contents;
+}
+
+.rectangle-5-2 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  border: 1px solid rgba(7, 6, 6, 1);
+  /*προσθηκη position, size και gradient απο το figma*/
+  position: absolute;
+  left: 18px;
+  top: 57px;
+  width: 361px;
+  height: 108px;
+  background: linear-gradient(to bottom, rgba(213, 101, 2, 1), rgba(197, 135, 0, 1));
+}
+
+.background-3 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  /*προσθηκη position, size και gradient απο το figma*/
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 1920px;
+  height: 1080px;
+  background: linear-gradient(to bottom, rgba(204, 125, 0, 1), rgba(255, 240, 152, 1));
+}
+
+.tree-branch-onitama-4 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  opacity: 0.5;
+  /*προσθηκη position και size απο το figma (το plug in ειχε width:100% και height:auto)*/
+  position: absolute;
+  left: 639px;
+  top: 31px;
+  width: 688px;
+  height: 596px;
+  max-width: none;
+}
+
+.temple-with-branches-5 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  opacity: 0.6000000238418579;
+  /*προσθηκη position και size απο το figma (το plug in ειχε width:100% και height:auto)*/
+  position: absolute;
+  left: 0px;
+  top: -103px;
+  width: 668px;
+  height: 1192px;
+  max-width: none;
+}
+
+.tree-with-braches-6 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  opacity: 0.5;
+  /*προσθηκη position και size απο το figma (το plug in ειχε width:100% και height:auto)*/
+  position: absolute;
+  left: 1012px;
+  top: 310px;
+  width: 1028px;
+  height: 779px;
+  max-width: none;
+}
+
+.tree-branch-right-7 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  opacity: 0.699999988079071;
+  /*προσθηκη position και size απο το figma (το plug in ειχε width:100% και height:auto)*/
+  position: absolute;
+  left: 1207px;
+  top: -353px;
+  width: 903px;
+  height: 1012px;
+  max-width: none;
+}
+
+.rectangle-6-8 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  border: 1px solid rgba(7, 6, 6, 1);
+  /*προσθηκη position, size και gradient απο το figma*/
+  position: absolute;
+  left: 439px;
+  top: 57px;
+  width: 361px;
+  height: 108px;
+  background: linear-gradient(to bottom, rgba(213, 101, 2, 1), rgba(197, 135, 0, 1));
+}
+
+.rectangle-10-9 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  border: 1px solid rgba(7, 6, 6, 1);
+  /*προσθηκη position, size και gradient απο το figma*/
+  position: absolute;
+  left: 39px;
+  top: 57px;
+  width: 307px;
+  height: 108px;
+  background: linear-gradient(to bottom, rgba(213, 101, 2, 1), rgba(197, 135, 0, 1));
+}
+
+.rectangle-7-10 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  border: 1px solid rgba(7, 6, 6, 1);
+  /*προσθηκη position, size και gradient απο το figma*/
+  position: absolute;
+  left: 1526px;
+  top: 57px;
+  width: 350px;
+  height: 108px;
+  background: linear-gradient(to bottom, rgba(213, 101, 2, 1), rgba(197, 135, 0, 1));
+}
+
+.text-11 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  text-align: left;
+  font-family: var(--font-family-inter);
+  font-weight: normal;
+  font-size: 64px;
+  text-decoration: none;
+  text-transform: none;
+  color: var(--text-black);
+  /*προσθηκη position, width και white-space*/
+  position: absolute;
+  left: 1605px;
+  top: 72px;
+  width: 418px;
+  white-space: nowrap;
+}
+
+.text-12 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  text-align: left;
+  font-family: var(--font-family-inter);
+  font-weight: normal;
+  font-size: 64px;
+  text-decoration: none;
+  text-transform: none;
+  color: var(--text-black);
+  /*προσθηκη position, width και white-space*/
+  position: absolute;
+  left: 80px;
+  top: 71px;
+  width: 552px;
+  white-space: nowrap;
+}
+
+.text-13 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  text-align: left;
+  font-family: var(--font-family-inter);
+  font-weight: normal;
+  font-size: 60px;
+  text-decoration: none;
+  text-transform: none;
+  color: var(--text-black);
+  /*προσθηκη position, width και white-space*/
+  position: absolute;
+  left: 465px;
+  top: 75px;
+  width: 349px;
+  white-space: nowrap;
+}
+
+.rectangle-8-14 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  border: 1px solid rgba(0, 0, 0, 1);
+  /*προσθηκη position, size και gradient απο το figma*/
+  position: absolute;
+  left: 1526px;
+  top: 197px;
+  width: 350px;
+  height: 732px;
+  background: linear-gradient(to bottom, rgba(213, 101, 2, 1), rgba(197, 135, 0, 1));
+}
+
+.rectangle-9-15 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  border: 1px solid rgba(0, 0, 0, 1);
+  /*προσθηκη position, size και gradient απο το figma*/
+  position: absolute;
+  left: 39px;
+  top: 190px;
+  width: 348px;
+  height: 732px;
+  background: linear-gradient(to bottom, rgba(213, 101, 2, 1), rgba(197, 135, 0, 1));
+}
+
+.rectangle-10-17 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  border: 1px solid rgba(0, 0, 0, 1);
+  /*προσθηκη position, size και gradient απο το figma*/
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 1034px;
+  height: 51px;
+  background: linear-gradient(to bottom, rgba(213, 101, 2, 1), rgba(197, 135, 0, 1));
+}
+
+.rectangle-11-18 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  border: 1px solid rgba(0, 0, 0, 1);
+  /*προσθηκη position, size και gradient απο το figma*/
+  position: absolute;
+  left: 0px;
+  top: 51px;
+  width: 1034px;
+  height: 51px;
+  background: linear-gradient(to bottom, rgba(213, 101, 2, 1), rgba(197, 135, 0, 1));
+}
+
+.rectangle-12-19 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  border: 1px solid rgba(0, 0, 0, 1);
+  /*προσθηκη position, size και gradient απο το figma*/
+  position: absolute;
+  left: 0px;
+  top: 101px;
+  width: 1034px;
+  height: 51px;
+  background: linear-gradient(to bottom, rgba(213, 101, 2, 1), rgba(197, 135, 0, 1));
+}
+
+.rectangle-13-20 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  border: 1px solid rgba(0, 0, 0, 1);
+  /*προσθηκη position, size και gradient απο το figma*/
+  position: absolute;
+  left: 0px;
+  top: 152px;
+  width: 1034px;
+  height: 51px;
+  background: linear-gradient(to bottom, rgba(213, 101, 2, 1), rgba(197, 135, 0, 1));
+}
+
+.rectangle-14-21 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  border: 1px solid rgba(0, 0, 0, 1);
+  /*προσθηκη position, size και gradient απο το figma*/
+  position: absolute;
+  left: 0px;
+  top: 202px;
+  width: 1034px;
+  height: 51px;
+  background: linear-gradient(to bottom, rgba(213, 101, 2, 1), rgba(197, 135, 0, 1));
+}
+
+.rectangle-15-22 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  border: 1px solid rgba(0, 0, 0, 1);
+  /*προσθηκη position, size και gradient απο το figma*/
+  position: absolute;
+  left: 0px;
+  top: 253px;
+  width: 1034px;
+  height: 51px;
+  background: linear-gradient(to bottom, rgba(213, 101, 2, 1), rgba(197, 135, 0, 1));
+}
+
+.rectangle-16-23 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  border: 1px solid rgba(0, 0, 0, 1);
+  /*προσθηκη position, size και gradient απο το figma*/
+  position: absolute;
+  left: 0px;
+  top: 304px;
+  width: 1034px;
+  height: 51px;
+  background: linear-gradient(to bottom, rgba(213, 101, 2, 1), rgba(197, 135, 0, 1));
+}
+
+.rectangle-17-24 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  border: 1px solid rgba(0, 0, 0, 1);
+  /*προσθηκη position, size και gradient απο το figma*/
+  position: absolute;
+  left: 0px;
+  top: 354px;
+  width: 1034px;
+  height: 51px;
+  background: linear-gradient(to bottom, rgba(213, 101, 2, 1), rgba(197, 135, 0, 1));
+}
+
+.rectangle-18-25 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  border: 1px solid rgba(0, 0, 0, 1);
+  /*προσθηκη position, size και gradient απο το figma*/
+  position: absolute;
+  left: 0px;
+  top: 405px;
+  width: 1034px;
+  height: 51px;
+  background: linear-gradient(to bottom, rgba(213, 101, 2, 1), rgba(197, 135, 0, 1));
+}
+
+.rectangle-19-26 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  border: 1px solid rgba(0, 0, 0, 1);
+  /*προσθηκη position, size και gradient απο το figma*/
+  position: absolute;
+  left: 0px;
+  top: 456px;
+  width: 1034px;
+  height: 51px;
+  background: linear-gradient(to bottom, rgba(213, 101, 2, 1), rgba(197, 135, 0, 1));
+}
+
+.rectangle-20-27 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  border: 1px solid rgba(0, 0, 0, 1);
+  /*προσθηκη position, size και gradient απο το figma*/
+  position: absolute;
+  left: 0px;
+  top: 506px;
+  width: 1034px;
+  height: 51px;
+  background: linear-gradient(to bottom, rgba(213, 101, 2, 1), rgba(197, 135, 0, 1));
+}
+
+.rectangle-21-28 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  border: 1px solid rgba(0, 0, 0, 1);
+  /*προσθηκη position, size και gradient απο το figma*/
+  position: absolute;
+  left: 0px;
+  top: 557px;
+  width: 1034px;
+  height: 51px;
+  background: linear-gradient(to bottom, rgba(213, 101, 2, 1), rgba(197, 135, 0, 1));
+}
+
+.rectangle-22-29 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  border: 1px solid rgba(0, 0, 0, 1);
+  /*προσθηκη position, size και gradient απο το figma*/
+  position: absolute;
+  left: 0px;
+  top: 607px;
+  width: 1034px;
+  height: 51px;
+  background: linear-gradient(to bottom, rgba(213, 101, 2, 1), rgba(197, 135, 0, 1));
+}
+
+.group-1-16 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  /*προσθηκη position και size απο το figma*/
+  position: absolute;
+  left: 439px;
+  top: 193px;
+  width: 1034px;
+  height: 658px;
+}
+
+.text-30 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  text-align: left;
+  font-family: var(--font-family-inter);
+  font-weight: normal;
+  font-size: 32px;
+  text-decoration: none;
+  text-transform: none;
+  color: var(--text-black);
+  /*προσθηκη position, width και white-space*/
+  position: absolute;
+  left: 455px;
+  top: 201px;
+  width: 184px;
+  white-space: nowrap;
+}
+
+.text-31 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  text-align: left;
+  font-family: var(--font-family-inter);
+  font-weight: normal;
+  font-size: 32px;
+  text-decoration: none;
+  text-transform: none;
+  color: var(--text-black);
+  /*προσθηκη position, width και white-space*/
+  position: absolute;
+  left: 458px;
+  top: 247px;
+  width: 230px;
+  white-space: nowrap;
+}
+
+.text-32 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  text-align: left;
+  font-family: var(--font-family-inter);
+  font-weight: normal;
+  font-size: 32px;
+  text-decoration: none;
+  text-transform: none;
+  color: var(--text-black);
+  /*προσθηκη position, width και white-space*/
+  position: absolute;
+  left: 458px;
+  top: 296px;
+  width: 184px;
+  white-space: nowrap;
+}
+
+.text-33 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  text-align: left;
+  font-family: var(--font-family-inter);
+  font-weight: normal;
+  font-size: 32px;
+  text-decoration: none;
+  text-transform: none;
+  color: var(--text-black);
+  /*προσθηκη position, width και white-space*/
+  position: absolute;
+  left: 458px;
+  top: 349px;
+  width: 184px;
+  white-space: nowrap;
+}
+
+.text-34 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  text-align: left;
+  font-family: var(--font-family-inter);
+  font-weight: normal;
+  font-size: 32px;
+  text-decoration: none;
+  text-transform: none;
+  color: var(--text-black);
+  /*προσθηκη position, width και white-space*/
+  position: absolute;
+  left: 458px;
+  top: 400px;
+  width: 184px;
+  white-space: nowrap;
+}
+
+.text-35 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  text-align: left;
+  font-family: var(--font-family-inter);
+  font-weight: normal;
+  font-size: 32px;
+  text-decoration: none;
+  text-transform: none;
+  color: var(--text-black);
+  /*προσθηκη position, width και white-space*/
+  position: absolute;
+  left: 461px;
+  top: 449px;
+  width: 184px;
+  white-space: nowrap;
+}
+
+.text-36 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  text-align: left;
+  font-family: var(--font-family-inter);
+  font-weight: normal;
+  font-size: 32px;
+  text-decoration: none;
+  text-transform: none;
+  color: var(--text-black);
+  /*προσθηκη position, width και white-space*/
+  position: absolute;
+  left: 461px;
+  top: 500px;
+  width: 184px;
+  white-space: nowrap;
+}
+
+.text-37 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  text-align: left;
+  font-family: var(--font-family-inter);
+  font-weight: normal;
+  font-size: 32px;
+  text-decoration: none;
+  text-transform: none;
+  color: var(--text-black);
+  /*προσθηκη position, width και white-space*/
+  position: absolute;
+  left: 461px;
+  top: 555px;
+  width: 184px;
+  white-space: nowrap;
+}
+
+.text-38 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  text-align: left;
+  font-family: var(--font-family-inter);
+  font-weight: normal;
+  font-size: 32px;
+  text-decoration: none;
+  text-transform: none;
+  color: var(--text-black);
+  /*προσθηκη position, width και white-space*/
+  position: absolute;
+  left: 461px;
+  top: 601px;
+  width: 184px;
+  white-space: nowrap;
+}
+
+.text-39 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  text-align: left;
+  font-family: var(--font-family-inter);
+  font-weight: normal;
+  font-size: 32px;
+  text-decoration: none;
+  text-transform: none;
+  color: var(--text-black);
+  /*προσθηκη position, width και white-space*/
+  position: absolute;
+  left: 461px;
+  top: 649px;
+  width: 184px;
+  white-space: nowrap;
+}
+
+.text-40 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  text-align: left;
+  font-family: var(--font-family-inter);
+  font-weight: normal;
+  font-size: 32px;
+  text-decoration: none;
+  text-transform: none;
+  color: var(--text-black);
+  /*προσθηκη position, width και white-space*/
+  position: absolute;
+  left: 461px;
+  top: 702px;
+  width: 184px;
+  white-space: nowrap;
+}
+
+.text-41 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  text-align: left;
+  font-family: var(--font-family-inter);
+  font-weight: normal;
+  font-size: 32px;
+  text-decoration: none;
+  text-transform: none;
+  color: var(--text-black);
+  /*προσθηκη position, width και white-space*/
+  position: absolute;
+  left: 461px;
+  top: 756px;
+  width: 184px;
+  white-space: nowrap;
+}
+
+.text-42 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  text-align: left;
+  font-family: var(--font-family-inter);
+  font-weight: normal;
+  font-size: 32px;
+  text-decoration: none;
+  text-transform: none;
+  color: var(--text-black);
+  /*προσθηκη position, width και white-space*/
+  position: absolute;
+  left: 461px;
+  top: 802px;
+  width: 184px;
+  white-space: nowrap;
+}
+
+.text-43 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  text-align: left;
+  font-family: var(--font-family-inter);
+  font-weight: normal;
+  font-size: 55px;
+  text-decoration: none;
+  text-transform: none;
+  color: var(--text-black);
+  /*προσθηκη position, width και white-space*/
+  position: absolute;
+  left: 54px;
+  top: 193px;
+  width: 202px;
+  white-space: nowrap;
+}
+
+.text-44 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  text-align: left;
+  font-family: var(--font-family-inter);
+  font-weight: normal;
+  font-size: 55px;
+  text-decoration: none;
+  text-transform: none;
+  color: var(--text-black);
+  /*προσθηκη position, width και white-space*/
+  position: absolute;
+  left: 1548px;
+  top: 197px;
+  width: 444px;
+  white-space: nowrap;
+}
+
+.rectangle-23-46 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  background-color: rgba(217, 217, 217, 1);
+  border: 1px solid rgba(0, 0, 0, 1);
+  /*προσθηκη position και size απο το figma*/
+  position: absolute;
+  left: 0px;
+  top: 11px;
+  width: 65px;
+  height: 62px;
+}
+
+.rectangle-24-47 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  background-color: rgba(217, 217, 217, 1);
+  border: 1px solid rgba(0, 0, 0, 1);
+  /*προσθηκη position και size απο το figma*/
+  position: absolute;
+  left: 79px;
+  top: 11px;
+  width: 65px;
+  height: 62px;
+}
+
+.text-48 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  text-align: left;
+  font-family: var(--font-family-inter);
+  font-weight: normal;
+  font-size: 9px;
+  text-decoration: none;
+  text-transform: none;
+  color: var(--text-black);
+  /*προσθηκη position, width και white-space*/
+  position: absolute;
+  left: 22px;
+  top: 22px;
+  width: 22px;
+  white-space: nowrap;
+}
+
+.text-49 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  text-align: left;
+  font-family: var(--font-family-inter);
+  font-weight: normal;
+  font-size: 9px;
+  text-decoration: none;
+  text-transform: none;
+  color: var(--text-black);
+  /*προσθηκη position, width και white-space*/
+  position: absolute;
+  left: 101px;
+  top: 22px;
+  width: 22px;
+  white-space: nowrap;
+}
+
+.rectangle-38-50 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  background-color: rgba(217, 217, 217, 1);
+  border: 1px solid rgba(0, 0, 0, 1);
+  /*προσθηκη position και size απο το figma*/
+  position: absolute;
+  left: 0px;
+  top: 11px;
+  width: 65px;
+  height: 62px;
+}
+
+.rectangle-39-51 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  background-color: rgba(217, 217, 217, 1);
+  border: 1px solid rgba(0, 0, 0, 1);
+  /*προσθηκη position και size απο το figma*/
+  position: absolute;
+  left: 79px;
+  top: 11px;
+  width: 65px;
+  height: 62px;
+}
+
+.text-52 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  text-align: left;
+  font-family: var(--font-family-inter);
+  font-weight: normal;
+  font-size: 64px;
+  text-decoration: none;
+  text-transform: none;
+  color: var(--text-black);
+  /*προσθηκη position, width και white-space*/
+  position: absolute;
+  left: 8px;
+  top: 0px;
+  width: 71px;
+  white-space: nowrap;
+}
+
+.text-53 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  text-align: left;
+  font-family: var(--font-family-inter);
+  font-weight: normal;
+  font-size: 64px;
+  text-decoration: none;
+  text-transform: none;
+  color: var(--text-black);
+  /*προσθηκη position, width και white-space*/
+  position: absolute;
+  left: 91px;
+  top: 0px;
+  width: 53px;
+  white-space: nowrap;
+}
+
+.group-3-45 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  /*προσθηκη position και size απο το figma*/
+  position: absolute;
+  left: 1327px;
+  top: 865px;
+  width: 144px;
+  height: 114px;
+}
+
+.lobbies-1 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  /*fixed μεγεθος καμβα 1920x1080 (position, width, height, overflow)*/
+  position: relative;
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden;
+}
+
+/*μεταφορα των @media sections εκτος του .about-1 που τα τοποθετησε το plug in (πλεον σωστη εμφανιση της σελιδας με αναλογο padding σε καθε παρθυρο)*/
+@media (max-width: 1440px) {
+  .lobbies-1 {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .lobbies-1 {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+/*κουμπια: vs CPU, Find Lobby, Profile, γραμμες lobby, βελακια*/
+.rectangle-10-9,
+.rectangle-6-8,
+.rectangle-7-10,
+.rectangle-10-17,
+.rectangle-11-18,
+.rectangle-12-19,
+.rectangle-13-20,
+.rectangle-14-21,
+.rectangle-15-22,
+.rectangle-16-23,
+.rectangle-17-24,
+.rectangle-18-25,
+.rectangle-19-26,
+.rectangle-20-27,
+.rectangle-21-28,
+.rectangle-22-29,
+.rectangle-38-50,
+.rectangle-39-51 {
+  display: block;
+  box-sizing: content-box;
+  padding: 0;
+  cursor: pointer;
+}
+
+.rectangle-10-9:hover,
+.rectangle-6-8:hover,
+.rectangle-7-10:hover,
+.rectangle-10-17:hover,
+.rectangle-11-18:hover,
+.rectangle-12-19:hover,
+.rectangle-13-20:hover,
+.rectangle-14-21:hover,
+.rectangle-15-22:hover,
+.rectangle-16-23:hover,
+.rectangle-17-24:hover,
+.rectangle-18-25:hover,
+.rectangle-19-26:hover,
+.rectangle-20-27:hover,
+.rectangle-21-28:hover,
+.rectangle-22-29:hover,
+.rectangle-38-50:hover,
+.rectangle-39-51:hover {
+  filter: brightness(1.12);
+}
+
+.rectangle-10-9:active,
+.rectangle-6-8:active,
+.rectangle-7-10:active,
+.rectangle-10-17:active,
+.rectangle-11-18:active,
+.rectangle-12-19:active,
+.rectangle-13-20:active,
+.rectangle-14-21:active,
+.rectangle-15-22:active,
+.rectangle-16-23:active,
+.rectangle-17-24:active,
+.rectangle-18-25:active,
+.rectangle-19-26:active,
+.rectangle-20-27:active,
+.rectangle-21-28:active,
+.rectangle-22-29:active,
+.rectangle-38-50:active,
+.rectangle-39-51:active {
+  filter: brightness(0.92);
+}
+
+/*κειμενα και εικονες*/
+.text-11,
+.text-12,
+.text-13,
+.text-30,
+.text-31,
+.text-32,
+.text-33,
+.text-34,
+.text-35,
+.text-36,
+.text-37,
+.text-38,
+.text-39,
+.text-40,
+.text-41,
+.text-42,
+.text-43,
+.text-44,
+.text-48,
+.text-49,
+.text-52,
+.text-53,
+.tree-branch-onitama-4,
+.temple-with-branches-5,
+.tree-with-braches-6,
+.tree-branch-right-7 {
+  pointer-events: none;
+}
