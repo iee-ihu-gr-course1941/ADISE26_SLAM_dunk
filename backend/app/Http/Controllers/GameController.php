@@ -156,15 +156,18 @@ class GameController extends Controller
 
 
 
-
-
-    private function getCurrentGameId(Request $request, string $action): int
-    {
+    private function getAuthenticatedUserId(Request $request): int{
         $user = $request->user();
         if ($user === null) {
             abort(401, 'Login is required');
         }
-        $userId = (int)$user->getAuthIdentifier();
+        return (int)$user->getKey();
+    }
+
+
+    private function getCurrentGameId(Request $request, string $action): int
+    {
+        $userId = $this->getAuthenticatedUserId($request);
         $games = DB::table('games')
             ->where(function ($query) use ($userId) {
                 $query->where('player1_id', $userId);
@@ -258,12 +261,7 @@ class GameController extends Controller
     //identity from laravel, never from a json / user id whatevs
     private function getPlayerSeat(Request $request, array $game): int
     {
-        $user = $request->user();
-        if ($user === null) {
-            abort(401, 'Login is required.');
-        }
-
-        $userId = (int)$user->getAuthIdentifier();
+        $userId = $this->getAuthenticatedUserId($request);
         if ($userId === $game['player1_id']) {
             return 1;
         }

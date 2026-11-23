@@ -21,7 +21,7 @@ Route::prefix('v1')->group(function () {
     });
 
     // Game Endpoints
-    Route::middleware(PostmanTestUser::class)->group(function () {
+    Route::middleware('auth.token')->group(function () {
         Route::get('/game', [GameController::class, 'show']);
         Route::post('/game/start', [GameController::class, 'start']);
         Route::post('/game/move', [GameController::class, 'move']);
