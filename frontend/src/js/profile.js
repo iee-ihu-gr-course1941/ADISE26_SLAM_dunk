@@ -32,7 +32,7 @@ function initializePlayerProfile() {
   draws = document.getElementById("profile-draws"); //html id for draws text
   //last_active = document.getElementById(""); //html id for last active text
   full_name = document.getElementById("profile-full_name"); //html id for full_name text
-  //iee_id = document.getElementById(""); //html id for iee_id text
+  iee_id = document.getElementById("iee-id"); //html id for iee_id text
   getUserInfo();
 }
 
@@ -60,6 +60,7 @@ function inputUserData(me) {
   draws.textContent = me.leaderboard.draws;
   losses.textContent = me.leaderboard.losses;
   full_name.textContent = me.full_name;
+  iee_id.textContent = me.iee_id;
 }
 
 initializePlayerProfile();
