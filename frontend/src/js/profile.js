@@ -1,4 +1,4 @@
-import { readResponse } from "./login.js";
+import { readResponse, showError } from "./login.js";
 const APPS_USER_PROFILE_ENDPOINT = "http://127.0.0.1:8000/api/v1/profile";
 let list; //arxikes metablhtes
 let profile;
@@ -50,7 +50,7 @@ async function getUserInfo() {
     me = data;
     inputUserData(me);
   } catch (error) {
-    console.log(error);
+    showError(error);
   }
 }
 
