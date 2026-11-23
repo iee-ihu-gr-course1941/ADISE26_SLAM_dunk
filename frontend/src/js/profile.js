@@ -31,7 +31,7 @@ function initializePlayerProfile() {
   elo = document.getElementById("profile-elo"); //html id for elo text
   draws = document.getElementById("profile-draws"); //html id for draws text
   //last_active = document.getElementById(""); //html id for last active text
-  //full_name = document.getElementById(""); //html id for full_name text
+  full_name = document.getElementById("profile-full_name"); //html id for full_name text
   //iee_id = document.getElementById(""); //html id for iee_id text
   getUserInfo();
 }
@@ -59,6 +59,7 @@ function inputUserData(me) {
   elo.textContent = me.leaderboard.elo;
   draws.textContent = me.leaderboard.draws;
   losses.textContent = me.leaderboard.losses;
+  full_name.textContent = me.full_name;
 }
 
 initializePlayerProfile();

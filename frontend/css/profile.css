@@ -118,7 +118,7 @@ a.prototype-link {
   color: var(--text-black);
   /*προσθηκη position, width και white-space*/
   position: absolute;
-  left: 450px;
+  left: 805px;
   top: 200px;
   width: 373px;
   white-space: nowrap;
@@ -132,9 +132,9 @@ a.prototype-link {
   /*προσθηκη position, size και gradient απο το figma*/
   position: absolute;
   left: 450px;
-  top: 300px;
-  width: 1000px;
-  height: 390px;
+  top: 330px;
+  width: 450px;
+  height: 450px;
   border-radius: 20px;
   background: linear-gradient(
     to bottom,
@@ -222,14 +222,17 @@ a.prototype-link {
   font-size: 40px;
   text-decoration: none;
   text-transform: none;
-  color: var(--text-black);
+  color: #3b82f6;
   /*προσθηκη position, width και white-space*/
   position: absolute;
   left: 20px;
-  top: 300px;
-  width: 741px;
+  top: 90px;
+  width: 250px;
   white-space: nowrap;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.15);
+  padding: 6px 14px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.55);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.15);
 }
 
 .win-percentage-text {
@@ -242,14 +245,17 @@ a.prototype-link {
   font-size: 40px;
   text-decoration: none;
   text-transform: none;
-  color: var(--text-black);
+  color: #9968f5;
   /*προσθηκη position, width και white-space*/
   position: absolute;
   left: 20px;
-  top: 250px;
-  width: 741px;
+  top: 90px;
+  width: 400px;
   white-space: nowrap;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.15);
+  padding: 6px 14px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.55);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.15);
 }
 
 .draws-text {
@@ -269,7 +275,6 @@ a.prototype-link {
   top: 230px;
   width: 250px;
   white-space: nowrap;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.15);
   padding: 6px 14px;
   border-radius: 10px;
   background: rgba(0, 0, 0, 0.55);
@@ -305,6 +310,81 @@ a.prototype-link {
   height: 1080px;
   overflow: hidden;
 }
+
+.elo-div {
+  position: absolute;
+  left: 950px;
+  top: 580px;
+  width: 500px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+   border: 1px solid rgba(60, 30, 0, 0.6);
+  background: linear-gradient(
+    to bottom,
+    rgba(213, 101, 2, 1),
+    rgba(197, 135, 0, 1)
+  );
+  font-family: var(--font-family-inter);
+  font-size: 56px;
+  color: var(--text-black);
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 12px; 
+  box-shadow:
+    0 12px 32px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(2px);
+}
+
+#profile-full_name{
+  font-size: 25px;
+  position: absolute;
+  left: -25px;
+  top: 80px;
+}
+
+#profile-username{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+.win-percentage-div {
+  position: absolute;
+  left: 950px;
+  top: 330px;
+  width: 500px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+   border: 1px solid rgba(60, 30, 0, 0.6);
+  background: linear-gradient(
+    to bottom,
+    rgba(213, 101, 2, 1),
+    rgba(197, 135, 0, 1)
+  );
+  font-family: var(--font-family-inter);
+  font-size: 56px;
+  color: var(--text-black);
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 12px; 
+  box-shadow:
+    0 12px 32px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(2px);
+}
+
+.elo-heading,.win-percentage-heading{
+  font-size: 50px;
+  font-weight: 400;
+  left: 20px;
+  top: 10px;
+  position: absolute;
+}
+
 
 /*ΑΛΛΑΓΗ κουμπι επιστροφης κατω απο το πλαισιο, με το ιδιο στυλ με τα κουμπια της αρχικης*/
 .profile-back-button {
