@@ -37,7 +37,6 @@ export function getLoginReady() {
     tokenApps = token.slice(7);
     sessionStorage.setItem("token", JSON.stringify(tokenApps));
   }
-  console.log(me);
 
   const storedToken = sessionStorage.getItem("token");
   me = JSON.parse(storedToken);
@@ -69,11 +68,9 @@ export async function getUserInfo() {
     if (!response.ok) {
       throw new Error("Could not fetch data");
     }
-    console.log(response);
     const data = await readResponse(response);
     me = data;
     sessionStorage.setItem("user", JSON.stringify(me));
-    console.log(data);
     showUserInfo(me);
   } catch (error) {
     showError(error);
@@ -89,7 +86,6 @@ export function readResponse(response) {
 }
 
 function showUserInfo(me) {
-  console.log(me);
   info.innerHTML = me.username;
   users_name.innerHTML = me.full_name;
   username.innerHTML = me.username;

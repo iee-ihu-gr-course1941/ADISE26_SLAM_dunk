@@ -1,6 +1,7 @@
 import { readResponse, showError } from "./login.js";
 const APPS_USER_PROFILE_ENDPOINT = "http://127.0.0.1:8000/api/v1/profile";
 let list; //arxikes metablhtes
+let profile;
 let wins; // metablhth gia ta wins pou tha paroume apo to response tou server
 let losses; // metablhth gia ta losses pou tha paroume apo to response tou server
 let draws; // metablhth gia tis isopalies tou xrhsth pou tha paroume apo to response tou server
@@ -18,6 +19,11 @@ window.initializePlayerProfile = initializePlayerProfile;
 //otan kapoios kanei succesfull login, alla auto to info den ginete update (dioti den kaneis kapoios monimos login)
 //ara oi nikes,httes,isopalies kai to elo menei idio me auth thn methodo, ara ta janazhtame apo to server pou epikoinonei me thn bash dedomenon mas
 function initializePlayerProfile() {
+  profile = document.getElementById("profile");
+  //An den eimaste sthn selida tou profil stamatame
+  if(!profile){
+    return;
+  }
   //tha ta gemiso me ta id ton html elements otan tha einai etoimo to html
   username = document.getElementById("profile-username"); //html id for username text
   wins = document.getElementById("profile-wins"); //html id for wins text
@@ -41,10 +47,8 @@ async function getUserInfo() {
     });
     const data = await readResponse(response);
     me = data;
-    console.log(me);
     inputUserData(me);
   } catch (error) {
-    console.log(error);
     showError(error);
   }
 }
