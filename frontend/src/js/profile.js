@@ -11,7 +11,8 @@ let username; // metablhth gia to username tou xrhsth sto apps
 let full_name; // metablhth gia to plhrh onoma tou xrhsth sto apps
 let iee_id; // metablhth gia to iee_id tou xrhsth sto apps
 const storedUser = sessionStorage.getItem("token"); //Pairnoume ton stored user apo to session storage pou apothukeusame sto 1o login tou xrhsth
-let me = JSON.parse(storedUser);
+let me;
+let token = JSON.parse(storedUser);
 window.initializePlayerProfile = initializePlayerProfile;
 
 //Logos pou janastelno get gia to player profile info
@@ -41,7 +42,7 @@ async function getUserInfo() {
     const response = await fetch(APPS_USER_PROFILE_ENDPOINT, {
       method: "GET",
       headers: {
-        Authorization: `Bearer ${me}`,
+        Authorization: `Bearer ${token}`,
         Accept: "application/json",
       },
     });
