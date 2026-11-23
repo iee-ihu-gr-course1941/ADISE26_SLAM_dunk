@@ -73,9 +73,9 @@ class GameController extends Controller
             //1 find the players game and load its board and card moves
             $gameId = $this->getCurrentGameId($request, $action);
             $game = $this->loadGame($gameId);
-            //pvp only for now, including games that were already started
-            if ($game['mode'] !== 'pvp') {
-                abort(409, 'Only PvP games are supported for now.');
+            //both human opponents and cpu games are supported
+            if (!in_array($game['mode'], ['pvp', 'pvc'], true)) {
+                abort(409, 'Invalid game mode');
             }
             $player = $this->getPlayerSeat($request, $game);
             $this->loadCardMoves();
@@ -161,7 +161,7 @@ class GameController extends Controller
         if ($user === null) {
             abort(401, 'Login is required');
         }
-        return (int)$user->getKey();
+        return (int)$user->getAuthIdentifier();
     }
 
 
@@ -278,21 +278,32 @@ class GameController extends Controller
         if ($player !== 1){
             abort (403, 'Only player 1 can start the game.');
         }
+
         if ($game['status'] !== 'waiting'){
             abort(403, 'Only a waiting game can be started.');
         }
-        if ($game['mode'] !== 'pvp'){
-            abort(409, 'Only PvP games are supported for now.');
+
+        //pvp needs another user, pvc reserves player 2 for the cpu
+        if ($game['mode'] === 'pvp') {
+            if ($game['player2_id'] === null) {
+                abort(409, 'Wait for player 2 to join');
+            }
+
+            if ($game['player1_id'] === $game['player2_id']) {
+                abort(409, 'The players must be different users');
+            }
+        } elseif ($game['mode'] === 'pvc') {
+            if ($game['player2_id'] !== null) {
+                abort(409, 'CPU games must not have a second user');
+            }
+        } else {
+            abort(409, 'Invalid game mode');
         }
-        if ($game['player2_id'] === null){
-            abort(409, 'Wait for player 2 to join.');
-        }
-        if ($game['player1_id'] === $game['player2_id']){
-            abort(409, 'The players must be different users.');
-        }
+
         if ($game['turn_duration_seconds'] <= 0){
             abort(409, 'The turn duration must be greater than 0.');
         }
+
         if (count($game['pieces']) !== 0){
             abort(409, 'The controller initializes pieces; the waiting board must be empty.');
         }
