@@ -25,18 +25,34 @@ function getLobbies(){
     accepts: "application/json",
     method: 'GET',
     headers: { Authorization: `Bearer ${token}` },
-    success: show_result,
+    success: createLobbiesList,
   }
   );
 }
+
+function createLobby(){
+  $.ajax({
+    url: CREATE_LOBBY_ENDPOINT,
+    accepts: "application/json",
+    method: "POST",
+    dataType: 'json',
+    headers: {Authorization: `Bearer ${token}`},
+    data: JSON.stringify({}),
+    success: show_result,
+  });
+}
+
+function deleteLobby(){}
+
+function joinLobby(){}
 
 function show_result(data){
   console.log(data);
 }
 
-function createLobbiesList(){
-  $("#list-lobbies");
-  $("listOfLobbies.li:even");
+function createLobbiesList(data){
+  $("#list-lobbies").append('<li>' + data + '</li>');
+  
 }
 
 
