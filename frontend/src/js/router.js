@@ -31,6 +31,10 @@ const handleLocation = async () => {
   if(path === "/profile" && window.initializePlayerProfile){
     window.initializePlayerProfile();
   }
+  //Otan anoigei to lobbies fernoume tis plhrofories ton lobbies apo to backend
+  if(path === "/lobbies" && window.initializeLobbies){
+    window.initializeLobbies();
+  }
   //το fit.js ξαναπροσαρμοζει την νεα σελιδα στο παραθυρο
   if (window.fitSetup) {
     window.fitSetup();
