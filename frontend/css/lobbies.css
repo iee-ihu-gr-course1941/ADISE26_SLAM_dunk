@@ -853,6 +853,13 @@ a.prototype-link {
   white-space: nowrap;
 }
 
+.create-lobby-button{
+  position: absolute;
+  left: 20px;
+  top: 20px;
+}
+
+
 .group-3-45 {
   flex-grow: 0;
   flex-shrink: 1;
