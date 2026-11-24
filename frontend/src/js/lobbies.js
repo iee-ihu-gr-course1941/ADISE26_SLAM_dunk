@@ -43,11 +43,19 @@ function createLobby(){
     data: sendData,
     headers: {Authorization: `Bearer ${token}`,accepts: 'application/json'},
     success: show_message
-  })
+  });
 }
 
 
-function deleteLobby(){}
+function deleteLobby(){
+  $.ajax({
+    url: DELETE_LOBBY_ENDPOINT,
+    method: 'DELETE',
+    dataType: "json",
+    headers: {Authorization: `Bearer ${token}`, accepts: 'application/json'},
+    success: show_message
+  });
+}
 
 function joinLobby(){}
 
