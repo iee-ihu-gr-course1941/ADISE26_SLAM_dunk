@@ -37,7 +37,7 @@ function createLobby(){
     method: "POST",
     dataType: 'json',
     headers: {Authorization: `Bearer ${token}`},
-    data: JSON.stringify({}),
+    data: JSON.stringify({turn_duration_seconds: 10}),
     success: show_result,
   });
 }
