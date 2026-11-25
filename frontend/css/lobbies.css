@@ -191,22 +191,19 @@ a.prototype-link {
   border: 1px solid rgba(0, 0, 0, 1);
   /*προσθηκη position, size και gradient απο το figma*/
   position: absolute;
-  left: 1526px;
-  top: 197px;
+  left: 0;
+  top: 0;
   width: 350px;
   height: 732px;
   background: linear-gradient(to bottom, rgba(213, 101, 2, 1), rgba(197, 135, 0, 1));
 }
 
 .friends-list-div{
-  flex-grow: 0;
-  flex-shrink: 1;
-  flex-basis: auto;
   border: 1px solid rgba(0, 0, 0, 1);
   position: absolute;
-  left: 39px;
-  top: 190px;
-  width: 348px;
+  right: 0px;
+  top: 197px;
+  width: 350px;
   height: 732px;
   background: linear-gradient(to bottom, rgba(213, 101, 2, 1), rgba(197, 135, 0, 1));
 }
@@ -370,10 +367,6 @@ a.prototype-link {
 }
 
 .lobbies-1 {
-  flex-grow: 0;
-  flex-shrink: 1;
-  flex-basis: auto;
-  /*fixed μεγεθος καμβα 1920x1080 (position, width, height, overflow)*/
   position: relative;
   width: 1920px;
   height: 1080px;
@@ -388,10 +381,11 @@ a.prototype-link {
   }
 }
 
+
 @media (max-width: 768px) {
   .lobbies-1 {
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: 0px;
+    padding-right: 0px;
   }
 }
 
