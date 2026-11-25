@@ -245,37 +245,9 @@ a.prototype-link {
   white-space: nowrap;
 }
 
-.rectangle-23-46 {
-  flex-grow: 0;
-  flex-shrink: 1;
-  flex-basis: auto;
-  background-color: rgba(217, 217, 217, 1);
-  border: 1px solid rgba(0, 0, 0, 1);
-  /*προσθηκη position και size απο το figma*/
-  position: absolute;
-  left: 0px;
-  top: 11px;
-  width: 65px;
-  height: 62px;
-}
-
-.rectangle-24-47 {
-  flex-grow: 0;
-  flex-shrink: 1;
-  flex-basis: auto;
-  background-color: rgba(217, 217, 217, 1);
-  border: 1px solid rgba(0, 0, 0, 1);
-  /*προσθηκη position και size απο το figma*/
-  position: absolute;
-  left: 79px;
-  top: 11px;
-  width: 65px;
-  height: 62px;
-}
-
 .create-lobby-button{
   position: absolute;
-  left: 20px;
+  left: 450px;
   top: 20px;
 }
 
