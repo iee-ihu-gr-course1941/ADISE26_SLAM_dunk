@@ -861,13 +861,13 @@ a.prototype-link {
 
 #list-lobbies-div{
   position: absolute;
-  top: 190px;
-  left: 440px;
+  top: 170px;
+  left: 420px;
   display: grid;
   grid-template-columns: repeat(3, 300px);
   gap: 16px;
   overflow-y: auto;
-  padding: 15px;
+  padding: 20px;
 }
 
 .lobby-box{
