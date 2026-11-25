@@ -379,4 +379,17 @@ a.prototype-link {
   overflow: hidden;
 }
 
+@media (max-width: 1440px) {
+  .lobbies-1 {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
 
+
+@media (max-width: 768px) {
+  .lobbies-1 {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
