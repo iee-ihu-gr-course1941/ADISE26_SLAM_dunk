@@ -98,7 +98,11 @@ function createLobbyListElement(lobby){
   lobbyTurnDurationSeconds.textContent = "Turn time: "+lobby.turn_duration_seconds + "s";
   lobbyTurnDurationSeconds.classList.add("lobby-duration");
 
-  lobbyInfo.append(lobbyHostName,lobbyTurnDurationSeconds,lobbyId,lobbyCreationTime);
+  let joinLobbyButton = document.createElement("button");
+  joinLobbyButton.textContent = "Join";
+  joinLobbyButton.classList.add("join-lobby-button");
+
+  lobbyInfo.append(lobbyHostName,lobbyTurnDurationSeconds,lobbyId,lobbyCreationTime,joinLobbyButton);
   lobbyBox.append(lobbyInfo);
 
   return lobbyBox;
