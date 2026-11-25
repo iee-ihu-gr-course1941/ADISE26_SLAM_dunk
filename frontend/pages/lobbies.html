@@ -7,34 +7,38 @@
       <img src="/css/images/temple-with-branches.png" class="temple-with-branches-5" alt="temple-with-branches" />
       <img src="/css/images/tree-with-braches.png" class="tree-with-braches-6" alt="tree-with-braches" />
       <img src="/css/images/tree-branch-right.png" class="tree-branch-right-7" alt="tree-branch-right" />
-      <button type="button" id="find-lobby-button" class="rectangle-6-8" aria-label="Find Lobby"></button>
+
+
+
+      <button type="button" id="find-lobby-button" class="find-lobby-button">
+         <p class="find-lobby-text">Find Lobby</p>
+      </button>
       
       <!--ορθογωνια κουμπια: vs CPU, Find Lobby, Profile, γραμμες lobby και βελακια < >-->
-      <button type="button" id="vs-cpu-button" class="rectangle-10-9" aria-label="vs CPU"></button>
+      <button type="button" id="vs-cpu-button" class="cpu-button">
+         <p class="cpu-text">vs CPU</p>
+      </button>
       <!--το link πηγαινει στο profile μεσω της route() του router.js-->
-      <a href="/profile" onclick="route()" id="profile-link" class="rectangle-7-10" aria-label="Profile"></a>
-      <p class="text-11"><span class="text-black">Profile</span></p>
-      <p class="text-12"><span class="text-black">vs CPU</span></p>
-      <p class="text-13"><span class="text-black">Find Lobby</span></p>
-      <div class="rectangle-8-14">
-         <p class="text-43"><span class="text-black">Filters</span></p>
+      <a href="/profile" onclick="route()" id="profile-link" class="profile-button">
+         <p class="profile-text">Profile</p>
+      </a>
+      <div class="filters-div">
+         <p class="filters-heading">Filters</p>
       </div>
-      <div class="rectangle-9-15">
-         <p class="text-44"><span class="text-black">Friends List</span></p>
+      <div class="friends-list-div">
+         <p class="friends-list-heading">Friends List</p>
       </div>
-     
-     
       <div id="list-lobbies-div">
         <div id="list-lobbies"></div>
       </div>
       <div>
         <button id="create-lobby-button" class="create-lobby-button">+</button>
       </div>
-      <button type="button" id="prev-page-button" class="rectangle-38-50" aria-label="previous page">
-          <p class="text-52"><span class="text-black">&lt;</span></p>
+      <button type="button" id="prev-page-button" class="arrow-back-button">
+          <p class="arrow-back">&lt;</p>
         </button>
-        <button type="button" id="next-page-button" class="rectangle-39-51" aria-label="next page">
-          <p class="text-53"><span class="text-black">&gt;</span></p> 
+        <button type="button" id="next-page-button" class="arrow-front-button">
+          <p class="arrow-front">&gt;</p> 
       </button>
     </div>
 
