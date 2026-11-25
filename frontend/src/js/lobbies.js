@@ -15,6 +15,7 @@ function initializeLobbies(){
     return;
   }
   $("#create-lobby-button").click(createLobby);
+  $("#delete-lobby-button").click(deleteLobby);
 }
 
 function getLobbies(){
@@ -40,7 +41,6 @@ function createLobby(){
     success: getLobbies
   });
 }
-
 
 function deleteLobby(){
   $.ajax({
