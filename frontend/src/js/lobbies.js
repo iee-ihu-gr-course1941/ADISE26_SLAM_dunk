@@ -1,5 +1,4 @@
 const GET_LOBBIES_ENDPOINT = "http://127.0.0.1:8000/api/v1/lobbies"; //get all the lobbies //create a new lobby
-const JOIN_LOBBY_ENDPOINT = ``; //join an existing lobby
 const DELETE_LOBBY_ENDPOINT = "http://127.0.0.1:8000/api/v1/lobbies"; //delete a lobby you own
 
 let listOfLobbies;
@@ -120,6 +119,10 @@ function createLobbyListElement(lobby){
 
 function show_message(message){
   listOfLobbies.empty();
+  let noLobbiesMessage = document.createElement("div");
+  noLobbiesMessage.textContent = message;
+  noLobbiesMessage.classList.add("no-lobbies");
+  listOfLobbies.append(noLobbiesMessage);
 }
 
 initializeLobbies();

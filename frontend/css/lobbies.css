@@ -379,6 +379,20 @@ a.prototype-link {
   overflow: hidden;
 }
 
+.no-lobbies{
+  margin-left: 50%;
+  width: 100%;
+  background-color: rgba(24, 24, 24, 0.7);
+  backdrop-filter: blur(3px);
+  color: white;
+  padding: 15px;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  font-size: 25px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
 @media (max-width: 1440px) {
   .lobbies-1 {
     padding-left: 24px;
