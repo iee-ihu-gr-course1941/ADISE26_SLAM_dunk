@@ -164,7 +164,6 @@ a.prototype-link {
   text-decoration: none;
   text-transform: none;
   color: var(--text-black);
-  /*προσθηκη position, width και white-space*/
 }
 
 .find-lobby-text {
@@ -178,7 +177,6 @@ a.prototype-link {
   text-decoration: none;
   text-transform: none;
   color: var(--text-black);
-  /*προσθηκη position, width και white-space*/
 }
 
 .filters-div {
@@ -187,10 +185,12 @@ a.prototype-link {
   flex-basis: auto;
   border: 1px solid rgba(0, 0, 0, 1);
   position: absolute;
+  display: flex;
+  justify-content: center;
   left: 0;
-  top: 0;
+  top: 200px;
   width: 350px;
-  height: 732px;
+  height: 100%;
   background: linear-gradient(to bottom, rgba(213, 101, 2, 1), rgba(197, 135, 0, 1));
 }
 
@@ -198,9 +198,11 @@ a.prototype-link {
   border: 1px solid rgba(0, 0, 0, 1);
   position: absolute;
   right: 0px;
-  top: 197px;
+  top: 0px;
   width: 350px;
-  height: 732px;
+  justify-content: center;
+  height: 100%;
+  display: flex;
   background: linear-gradient(to bottom, rgba(213, 101, 2, 1), rgba(197, 135, 0, 1));
 }
 
@@ -212,7 +214,7 @@ a.prototype-link {
   text-align: left;
   font-family: var(--font-family-inter);
   font-weight: normal;
-  font-size: 55px;
+  font-size: 40px;
   text-decoration: none;
   text-transform: none;
   color: var(--text-black);
@@ -221,17 +223,13 @@ a.prototype-link {
 }
 
 .friends-list-heading {
-  flex-grow: 0;
-  flex-shrink: 1;
-  flex-basis: auto;
-  text-align: left;
   font-family: var(--font-family-inter);
   font-weight: normal;
-  font-size: 55px;
+  font-size: 40px;
   text-decoration: none;
   text-transform: none;
   color: var(--text-black);
-  position: absolute;
+  position: relative;
   white-space: nowrap;
 }
 
@@ -369,19 +367,4 @@ a.prototype-link {
   overflow: hidden;
 }
 
-/*μεταφορα των @media sections εκτος του .about-1 που τα τοποθετησε το plug in (πλεον σωστη εμφανιση της σελιδας με αναλογο padding σε καθε παρθυρο)*/
-@media (max-width: 1440px) {
-  .lobbies-1 {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-}
-
-
-@media (max-width: 768px) {
-  .lobbies-1 {
-    padding-left: 0px;
-    padding-right: 0px;
-  }
-}
 
