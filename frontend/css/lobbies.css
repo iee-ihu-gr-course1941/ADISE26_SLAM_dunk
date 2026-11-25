@@ -50,7 +50,6 @@ a.prototype-link {
   flex-shrink: 1;
   flex-basis: auto;
   opacity: 0.5;
-  /*προσθηκη position και size απο το figma (το plug in ειχε width:100% και height:auto)*/
   position: absolute;
   left: 639px;
   top: 31px;
@@ -63,8 +62,7 @@ a.prototype-link {
   flex-grow: 0;
   flex-shrink: 1;
   flex-basis: auto;
-  opacity: 0.6000000238418579;
-  /*προσθηκη position και size απο το figma (το plug in ειχε width:100% και height:auto)*/
+  opacity: 1;
   position: absolute;
   left: 0px;
   top: -103px;
