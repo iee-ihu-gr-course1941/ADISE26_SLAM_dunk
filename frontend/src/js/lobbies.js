@@ -3,9 +3,6 @@ const JOIN_LOBBY_ENDPOINT = `http://127.0.0.1:8000/api/v1/lobbies/id/join`; //jo
 const DELETE_LOBBY_ENDPOINT = "http://127.0.0.1:8000/api/v1/lobbies"; //delete a lobby you own
 
 let listOfLobbies;
-//Jquery 
-
-//
 window.initializeLobbies = initializeLobbies;
 $(document).ready(getLobbies);
 const storedUser = sessionStorage.getItem("token"); 
@@ -26,7 +23,7 @@ function getLobbies(){
     accepts: "application/json",
     method: 'GET',
     headers: { Authorization: `Bearer ${token}` },
-    success: show_result,
+    success: createLobbiesList,
   }
   );
 }
@@ -62,6 +59,13 @@ function joinLobby(){}
 function show_result(data){
   listOfLobbies = data;
   console.log(listOfLobbies);
+}
+
+function createLobbiesList(data){
+  let i = 0;
+  for(i=0;i<data.length;i++){
+    $("#list-lobbies").append('<li>' + data[i].host_username + '</li>');
+  }
 }
 
 function show_message(){

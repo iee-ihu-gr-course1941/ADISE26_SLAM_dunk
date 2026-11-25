@@ -859,6 +859,12 @@ a.prototype-link {
   top: 20px;
 }
 
+#list-lobbies-div{
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
 
 .group-3-45 {
   flex-grow: 0;
