@@ -248,6 +248,12 @@ a.prototype-link {
   top: 20px;
 }
 
+.delete-lobby-button{
+  position: absolute;
+  left: 450px;
+  top: 20px;
+}
+
 #list-lobbies-div{
   position: absolute;
   top: 170px;
