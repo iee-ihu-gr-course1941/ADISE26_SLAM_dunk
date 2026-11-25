@@ -2,6 +2,8 @@ const GET_LOBBIES_ENDPOINT = "http://127.0.0.1:8000/api/v1/lobbies"; //get all t
 const DELETE_LOBBY_ENDPOINT = "http://127.0.0.1:8000/api/v1/lobbies"; //delete a lobby you own
 
 let listOfLobbies;
+let errorTimeout = null;
+let exists;
 window.initializeLobbies = initializeLobbies;
 $(document).ready(getLobbies);
 const storedUser = sessionStorage.getItem("token"); 
@@ -24,6 +26,7 @@ function getLobbies(){
     method: 'GET',
     headers: { Authorization: `Bearer ${token}` },
     success: createLobbiesList,
+    error: show_error_message
   }
   );
 }
@@ -37,7 +40,8 @@ function createLobby(){
     dataType: "json",
     data: sendData,
     headers: {Authorization: `Bearer ${token}`,accepts: 'application/json'},
-    success: getLobbies
+    success: getLobbies,
+    error: show_error_message
   });
 }
 
@@ -47,8 +51,30 @@ function deleteLobby(){
     method: 'DELETE',
     dataType: "json",
     headers: {Authorization: `Bearer ${token}`, accepts: 'application/json'},
-    success: getLobbies
+    success: getLobbies,
+    error: show_error_message,
   });
+}
+
+function show_error_message(data){
+  if(errorTimeout !==null){
+    clearTimeout(errorTimeout);
+  }
+  if(exists){
+      exists = false;
+      errorMessage.remove();
+  }
+  
+  let errorMessage = document.createElement("div");
+  exists = true;
+  var x = data.responseJSON;
+  errorMessage.textContent = x.message;
+  errorMessage.classList.add("error-message");
+  listOfLobbies.append(errorMessage);
+  errorTimeoute = setTimeout(() => {
+    errorMessage.remove();
+    errorTimeout = null;
+  }, 2000);
 }
 
 function joinLobby(id){
@@ -58,6 +84,7 @@ function joinLobby(id){
     method: 'POST',
     dataType: "json",
     headers: {Authorization: `Bearer ${token}`, accepts: 'application/json'},
+    error: show_error_message
   });
 }
 
@@ -73,7 +100,6 @@ function createLobbiesList(data){
     show_message("No Lobbies to join!");
     return;
   }
-  let i = 0;
   let elements = data.map(function (lobby){
     return createLobbyListElement(lobby);
   });
