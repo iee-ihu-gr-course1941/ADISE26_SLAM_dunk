@@ -1,5 +1,5 @@
 const GET_LOBBIES_ENDPOINT = "http://127.0.0.1:8000/api/v1/lobbies"; //get all the lobbies //create a new lobby
-const JOIN_LOBBY_ENDPOINT = `http://127.0.0.1:8000/api/v1/lobbies/id/join`; //join an existing lobby
+const JOIN_LOBBY_ENDPOINT = ``; //join an existing lobby
 const DELETE_LOBBY_ENDPOINT = "http://127.0.0.1:8000/api/v1/lobbies"; //delete a lobby you own
 
 let listOfLobbies;
@@ -52,7 +52,15 @@ function deleteLobby(){
   });
 }
 
-function joinLobby(){}
+function joinLobby(id){
+  console.log(id);
+  $.ajax({
+    url: `http://127.0.0.1:8000/api/v1/lobbies/${id}/join`,
+    method: 'POST',
+    dataType: "json",
+    headers: {Authorization: `Bearer ${token}`, accepts: 'application/json'},
+  });
+}
 
 function show_result(data){
   listOfLobbies = data;
@@ -101,6 +109,7 @@ function createLobbyListElement(lobby){
   let joinLobbyButton = document.createElement("button");
   joinLobbyButton.textContent = "Join";
   joinLobbyButton.classList.add("join-lobby-button");
+  joinLobbyButton.addEventListener("click",() => joinLobby(lobby.id));
 
   lobbyInfo.append(lobbyHostName,lobbyTurnDurationSeconds,lobbyId,lobbyCreationTime,joinLobbyButton);
   lobbyBox.append(lobbyInfo);
