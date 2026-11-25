@@ -111,6 +111,21 @@ a.prototype-link {
   background: linear-gradient(to bottom, rgba(213, 101, 2, 1), rgba(197, 135, 0, 1));
 }
 
+.profile-image{
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.profile-button a {
+   display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+}
+
 .cpu-button {
   flex-grow: 0;
   flex-shrink: 1;
@@ -125,32 +140,27 @@ a.prototype-link {
 }
 
 .profile-button {
-  flex-grow: 0;
-  flex-shrink: 1;
-  flex-basis: auto;
+   position: absolute;
+  left: 1470px;
+  top: 0px;
+  width: 100px;
+  height: 100px;
   border: 1px solid rgba(7, 6, 6, 1);
-  /*προσθηκη position, size και gradient απο το figma*/
-  position: absolute;
-  left: 1526px;
-  top: 57px;
-  width: 350px;
-  height: 108px;
-  text-decoration: none;
   background: linear-gradient(to bottom, rgba(213, 101, 2, 1), rgba(197, 135, 0, 1));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .profile-text {
-  flex-grow: 0;
-  flex-shrink: 1;
-  flex-basis: auto;
-  text-align: left;
+ 
   font-family: var(--font-family-inter);
-  font-weight: normal;
-  font-size: 50px;
-  text-decoration: none;
-  text-transform: none;
+  font-size: 18px; 
   color: var(--text-black);
-  text-decoration: none;
+  line-height: 1;
+  margin-top: 4px;
 }
 
 .cpu-text {
@@ -203,7 +213,9 @@ a.prototype-link {
   justify-content: center;
   height: 100%;
   display: flex;
-  background: linear-gradient(to bottom, rgba(213, 101, 2, 1), rgba(197, 135, 0, 1));
+  background-color: rgba(24, 24, 24, 0.7);
+    backdrop-filter: blur(3px);
+    
 }
 
 
@@ -228,7 +240,7 @@ a.prototype-link {
   font-size: 40px;
   text-decoration: none;
   text-transform: none;
-  color: var(--text-black);
+  color: white;
   position: relative;
   white-space: nowrap;
 }
