@@ -861,10 +861,72 @@ a.prototype-link {
 
 #list-lobbies-div{
   position: absolute;
-  top: 20px;
-  left: 20px;
+  top: 190px;
+  left: 440px;
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+  gap: 16px;
+  overflow-y: auto;
+  padding: 15px;
 }
 
+.lobby-box{
+  width: 300px;
+  height: 250px;
+  border-radius: 20px;
+  background-color: white;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.lobby-box:hover{
+  transform: translateY(-3px);
+   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.lobby-info{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 18px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #333;
+}
+
+.lobby-host{
+  font-size: 25px;
+  font-weight: 700;
+  color: #0f172a;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.8);
+  letter-spacing: -0.3px;
+}
+
+.lobby-time-created{
+  font-size: 18px;
+  color: #64748b;
+  font-style: normal;
+}
+
+.lobby-id {
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 20px;
+  font-weight: 600;
+  color: #3b82f6;
+  border-radius: 999px;
+  width: 50;
+}
+
+.lobby-duration {
+  font-size: 21px;
+  font-weight: 700;
+  color: black;
+  border-radius: 999px;
+}
 
 .group-3-45 {
   flex-grow: 0;

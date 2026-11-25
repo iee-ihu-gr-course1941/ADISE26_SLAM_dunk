@@ -10,7 +10,7 @@ let token = JSON.parse(storedUser);
 console.log(token);
 
 function initializeLobbies(){
-  listOfLobbies = $("#list-lobbies-div");
+  listOfLobbies = $("#list-lobbies");
   if(!listOfLobbies){
     return;
   }
@@ -29,17 +29,15 @@ function getLobbies(){
 }
 
 function createLobby(){
-  console.log("Button clicked");
   let data = {turn_duration_seconds:10};
   let sendData = JSON.stringify(data);
-  console.log(sendData);
   $.ajax({
     url: GET_LOBBIES_ENDPOINT,
     method: 'POST',
     dataType: "json",
     data: sendData,
     headers: {Authorization: `Bearer ${token}`,accepts: 'application/json'},
-    success: show_message
+    success: getLobbies
   });
 }
 
@@ -50,7 +48,7 @@ function deleteLobby(){
     method: 'DELETE',
     dataType: "json",
     headers: {Authorization: `Bearer ${token}`, accepts: 'application/json'},
-    success: show_message
+    success: getLobbies
   });
 }
 
@@ -62,14 +60,53 @@ function show_result(data){
 }
 
 function createLobbiesList(data){
-  let i = 0;
-  for(i=0;i<data.length;i++){
-    $("#list-lobbies").append('<li>' + data[i].host_username + '</li>');
+  console.log(data);
+  listOfLobbies.empty();
+  if(data.length === 0){
+    show_message("No Lobbies to join!");
+    return;
   }
+  let i = 0;
+  let elements = data.map(function (lobby){
+    return createLobbyListElement(lobby);
+  });
+  listOfLobbies.append(elements);
 }
 
-function show_message(){
-  console.log("success");
+function createLobbyListElement(lobby){
+  let lobbyBox = document.createElement("div");
+  lobbyBox.classList.add("lobby-box");
+
+
+  let lobbyInfo = document.createElement("div");
+  lobbyInfo.classList.add("lobby-info");
+
+  let lobbyHostName = document.createElement("span");
+  lobbyHostName.textContent = "Host: "+lobby.host_username;
+  lobbyHostName.classList.add("lobby-host");
+
+  let lobbyCreationTime = document.createElement("span");
+  lobbyCreationTime.textContent = lobby.created_at;
+  lobbyCreationTime.classList.add("lobby-time-created");
+
+
+  let lobbyId = document.createElement("span");
+  lobbyId.textContent = "id: "+lobby.id;
+  lobbyId.classList.add("lobby-id");
+
+  let lobbyTurnDurationSeconds = document.createElement("span");
+  lobbyTurnDurationSeconds.textContent = "Turn time: "+lobby.turn_duration_seconds + "s";
+  lobbyTurnDurationSeconds.classList.add("lobby-duration");
+
+  lobbyInfo.append(lobbyHostName,lobbyTurnDurationSeconds,lobbyId,lobbyCreationTime);
+  lobbyBox.append(lobbyInfo);
+
+  return lobbyBox;
+}
+
+
+function show_message(message){
+  listOfLobbies.empty();
 }
 
 initializeLobbies();
