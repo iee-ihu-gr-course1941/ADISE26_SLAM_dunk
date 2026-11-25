@@ -203,7 +203,6 @@ a.prototype-link {
   flex-shrink: 1;
   flex-basis: auto;
   border: 1px solid rgba(0, 0, 0, 1);
-  /*προσθηκη position, size και gradient απο το figma*/
   position: absolute;
   left: 39px;
   top: 190px;
