@@ -8,7 +8,6 @@ window.initializeLobbies = initializeLobbies;
 $(document).ready(getLobbies);
 const storedUser = sessionStorage.getItem("token"); 
 let token = JSON.parse(storedUser);
-console.log(token);
 
 function initializeLobbies(){
   listOfLobbies = $("#list-lobbies");
@@ -100,7 +99,6 @@ function show_result(data){
 }
 
 function createLobbiesList(data){
-  console.log(data);
   listOfLobbies.empty();
   if(data.length === 0){
     show_message("No Lobbies to join!");
