@@ -58,25 +58,31 @@ function deleteLobby(){
 
 function show_error_message(data){
   if(errorTimeout !==null){
+    //An to timeoute den einai null, svise to timeout
     clearTimeout(errorTimeout);
   }
+  //An uparxei to error message div mesa sto DOM
   if(exists){
       exists = false;
       errorMessage.remove();
+      //Svisto kai bale to exists false, dhladh oti pleon den uparxei
   }
   
   let errorMessage = document.createElement("div");
-  exists = true;
+  exists = true;//metablhth gia na doume an uparxei to errormessage div mesa sto DOM
+  //profanos otan to dhmiourgoume to thetoume iso me true
   var x = data.responseJSON;
   errorMessage.textContent = x.message;
   errorMessage.classList.add("error-message");
   listOfLobbies.append(errorMessage);
+  //Setaroume 2 deuterolepta timer event oste na kanoume remove to error message
   errorTimeoute = setTimeout(() => {
     errorMessage.remove();
     errorTimeout = null;
   }, 2000);
 }
 
+//AJAX function gia na kanei kapoios join to lobby me bash to id tou lobby pou pathsame
 function joinLobby(id){
   console.log(id);
   $.ajax({
@@ -110,7 +116,6 @@ function createLobbyListElement(lobby){
   let lobbyBox = document.createElement("div");
   lobbyBox.classList.add("lobby-box");
 
-
   let lobbyInfo = document.createElement("div");
   lobbyInfo.classList.add("lobby-info");
 
@@ -134,7 +139,12 @@ function createLobbyListElement(lobby){
   let joinLobbyButton = document.createElement("button");
   joinLobbyButton.textContent = "Join";
   joinLobbyButton.classList.add("join-lobby-button");
-  joinLobbyButton.addEventListener("click",() => joinLobby(lobby.id));
+  //Mexri edo einai apla h dhmiourgeia ton divs
+  $("#joinLobbyButton").on("click", function(){
+    joinLobby(lobby.id);
+  });
+   //function sto join lobby
+   //meso jquery
 
   lobbyInfo.append(lobbyHostName,lobbyTurnDurationSeconds,lobbyId,lobbyCreationTime,joinLobbyButton);
   lobbyBox.append(lobbyInfo);
