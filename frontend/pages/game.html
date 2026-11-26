@@ -3,6 +3,41 @@
     <button id="leave-lobby-button"></button>
     <button id="start-game-button"></button>
   </div>
-  <div id="main-hud"></div>
+  <div id="main-hud" class="overlay">
+    <div id="game-info" class="game-info">
+      <div id="game-settings" class="game-settings">
+        <div id="game-mode" class="game-mode"></div>
+        <div id="game-status" class="game-status"></div>
+        <div id="game-winner" class="game-winner"></div>
+      </div>
+      <div id="currently-playing" class="currently-playing">
+        <span id="currently-playing-text" class="currently-playing-text"></span>
+        <div id="currently-playing-orb" class="currently-playing-orb"></div>
+      </div>
+      <div id="in-lobby" class="in-lobby">
+        <div id="scoreboard">
+          <div id="lobby-heading">Lobby:</div>
+          <div id="players-container">
+            <div>
+              <div id="playerblue-section">
+                <div id="playerblue-color" class="banner-color-blue"></div>
+                <div class="player-details">
+                  <div id="playerblue-username" class="playerblue-username"></div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div id="playerred-section">
+                <div id="playerred-color" class="banner-color-red"></div>
+                <div class="player-details">
+                  <div id="playerred-username" class="playerred-username"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <canvas id="render"></canvas>
 </div>
