@@ -12,6 +12,7 @@ const routes = {
   "/lobbies": "/pages/lobbies.html",
   "/profile": "/pages/profile.html",
   "/leaderboard": "/pages/leaderboard.html",
+  "/game": "/pages/game.html"
 };
 
 const handleLocation = async () => {
@@ -35,6 +36,7 @@ const handleLocation = async () => {
   if(path === "/lobbies" && window.initializeLobbies){
     window.initializeLobbies();
   }
+
   //το fit.js ξαναπροσαρμοζει την νεα σελιδα στο παραθυρο
   if (window.fitSetup) {
     window.fitSetup();
