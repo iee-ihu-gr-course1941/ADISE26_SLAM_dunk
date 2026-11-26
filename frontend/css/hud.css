@@ -6,4 +6,71 @@
   width: clamp(280px, 45vw, 750px);
   min-height: 10%;
   padding: 0.75rem 1.5rem;
+  gap: 1.5rem;
+  box-sizing: border-box;
+  background-color: rgba(24,24,24,0.7);
+  backdrop-filter: blur(4px);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 0 0 0.75rem 0.75rem;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.inlobby{
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.exit-button{
+  display: inline-block;
+  padding: 6px 12px;
+  font-family: system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #fff;
+  background-color: #dc3545;
+  border: 1px solid #dc3545;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#scoreboard{
+  display: flex;
+  align-items: center;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  gap: 1rem;
+}
+
+.players-container{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.currently-playing{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 20px;
+  flex: 0 0 auto;
+  padding: 0 2rem;
+}
+
+.match-score{
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+}
+
+.playerred-username{
+  margin-left: 5px;
 }
