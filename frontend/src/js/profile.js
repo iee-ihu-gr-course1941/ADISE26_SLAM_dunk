@@ -1,11 +1,9 @@
 import { readResponse, showError } from "./login.js";
 const APPS_USER_PROFILE_ENDPOINT = "http://127.0.0.1:8000/api/v1/profile";
-let list; //arxikes metablhtes
 let profile;
 let wins; // metablhth gia ta wins pou tha paroume apo to response tou server
 let losses; // metablhth gia ta losses pou tha paroume apo to response tou server
 let draws; // metablhth gia tis isopalies tou xrhsth pou tha paroume apo to response tou server
-let last_active; // metablhth gia to pote ekane to teleutaio tou login
 let elo; // metablhth gia to elo apo to response tou server
 let username; // metablhth gia to username tou xrhsth sto apps
 let full_name; // metablhth gia to plhrh onoma tou xrhsth sto apps
@@ -31,7 +29,6 @@ function initializePlayerProfile() {
   losses = document.getElementById("profile-losses"); //html id for losses text
   elo = document.getElementById("profile-elo"); //html id for elo text
   draws = document.getElementById("profile-draws"); //html id for draws text
-  //last_active = document.getElementById(""); //html id for last active text
   full_name = document.getElementById("profile-full_name"); //html id for full_name text
   iee_id = document.getElementById("iee-id"); //html id for iee_id text
   getUserInfo();

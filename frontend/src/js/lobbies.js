@@ -140,9 +140,7 @@ function createLobbyListElement(lobby){
   joinLobbyButton.textContent = "Join";
   joinLobbyButton.classList.add("join-lobby-button");
   //Mexri edo einai apla h dhmiourgeia ton divs
-  $("#joinLobbyButton").on("click", function(){
-    joinLobby(lobby.id);
-  });
+  $("#joinLobbyButton").on("click", function(){ joinLobby(lobby.id); });
    //function sto join lobby
    //meso jquery
 
