@@ -74,3 +74,14 @@
 .playerred-username{
   margin-left: 5px;
 }
+
+.playerblue-username {
+    margin-left: 5px;
+}
+
+.red-player-info {
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+}
