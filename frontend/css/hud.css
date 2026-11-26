@@ -121,3 +121,35 @@
   flex-shrink: 0;
   background-color: #ef4a2a;
 }
+
+.game-settings{
+
+}
+
+.game-mode{
+
+}
+
+.game-status{
+
+}
+
+.game-winner{
+
+}
+
+.game-info{
+
+}
+
+#utility-hud{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: clamp(100px, 45vw, 250px);
+  min-height: 10%;
+  padding: 0.75rem 1.5rem;
+  gap: 1.5rem;
+  box-sizing: border-box;
+  background-color: rgba(24,24,24,0.7);
+}
