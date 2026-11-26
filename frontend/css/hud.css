@@ -25,7 +25,7 @@
   justify-content: flex-end;
 }
 
-.exit-button{
+#leave-lobby-button{
   display: inline-block;
   padding: 6px 12px;
   font-family: system-ui, sans-serif;
@@ -39,6 +39,26 @@
   cursor: pointer;
   text-align: center;
   vertical-align: middle;
+}
+
+#leave-lobby-button:hover{
+  background-color: #c62828;
+}
+
+#start-game-button{
+   background-color: #43a047;
+    color: white;
+    border: none;
+    padding: 6px 14px;
+    font-size: 13px;
+    font-weight: 400;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 1px solid white;
+}
+
+#start-game-button:hover{
+   background-color: #2e7d32;
 }
 
 #scoreboard{
