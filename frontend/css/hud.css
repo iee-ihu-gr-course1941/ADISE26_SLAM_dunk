@@ -46,15 +46,19 @@
 }
 
 #start-game-button{
-   background-color: #43a047;
-    color: white;
-    border: none;
-    padding: 6px 14px;
-    font-size: 13px;
-    font-weight: 400;
-    border-radius: 4px;
-    cursor: pointer;
-    border: 1px solid white;
+   display: inline-block;
+  padding: 6px 12px;
+  font-family: system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #fff;
+  background-color: #43a047;
+  border: 1px solid #43a047;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  text-align: center;
+  vertical-align: middle;
 }
 
 #start-game-button:hover{
@@ -152,4 +156,12 @@
   gap: 1.5rem;
   box-sizing: border-box;
   background-color: rgba(24,24,24,0.7);
+  backdrop-filter: blur(4px);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 0 0 0.75rem 0.75rem;
+  z-index: 10;
+  overflow: hidden;
 }
