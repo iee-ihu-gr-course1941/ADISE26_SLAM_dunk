@@ -14,12 +14,12 @@ let iee_id;
 let users_name;
 window.onload = getLoginReady;
 //Poly sos na kanoume initialize ta pragmata mas me to window on load
-//ΠΡΟΣΘΗΚΗ: να μπορει να την καλει ο router οταν φορτωνει την αρχικη
+//να μπορει να την καλει ο router οταν φορτωνει την αρχικη
 window.getLoginReady = getLoginReady;
 
 export function getLoginReady() {
   loginButton = document.getElementById("test-iee-login-button");
-  //ΠΡΟΣΘΗΚΗ: αν ο router δεν εχει βαλει ακομα την σελιδα το κουμπι πρακτικα δεν υπαρχει και σταματαμε (θα την καλεσει ο router στην ουσια)
+  //αν ο router δεν εχει βαλει ακομα την σελιδα το κουμπι πρακτικα δεν υπαρχει και σταματαμε (θα την καλεσει ο router στην ουσια)
   if (!loginButton) return;
   errorMessage = document.getElementById("error-message");
   info = document.getElementById("info");
@@ -36,6 +36,9 @@ export function getLoginReady() {
     );
     tokenApps = token.slice(7);
     sessionStorage.setItem("token", JSON.stringify(tokenApps));
+    //μετα το login ο router ανοιγει το main menu
+    history.replaceState(null, "", "/menu");
+    window.dispatchEvent(new PopStateEvent("popstate"));
   }
 
   const storedToken = sessionStorage.getItem("token");
