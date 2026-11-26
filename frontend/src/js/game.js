@@ -1,16 +1,19 @@
 import * as THREE from 'three';
 console.log(THREE);
-
+window.createScene = createScene;
 function createScene(){
+  //to div mesa sto opoio tha einai to game scene mas
+  //einai anejarthto apo alla divs pou tuxon na mpoune mesa sto game scene
+    const canvas = document.querySelector("canvas.render");
+    if(!canvas){
+      return;
+    }
   //XRHSHMA CONSTANTS EDO PANO
     const PAWNS_COLOR = {
-        RED: "#C41E3A",
-        BLUE: "#1565C0",
+        RED: "#C41E3A", //Red player piece color
+        BLUE: "#1565C0", //Blue player piece color
     };
-    //to div mesa sto opoio tha einai to game scene mas
-    //einai anejarthto apo alla divs pou tuxon na mpoune mesa sto game scene
-    const canvas = document.querySelector("canvas.render");
-
+    
     //Gia thn dhmiourgeia mias skhnhs kanoume ena neo instance tou scene object
     const scene = new THREE.Scene();
     //Gia thn camera kanoume neo instance tou camera object
@@ -35,4 +38,9 @@ function createScene(){
     renderer.shadowMap.enabled = true; //ENABLE SHADOWS SOS!!!
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.render(scene, camera);
+
+    const axesHelper = new THREE.AxesHelper(5);
+    scene.add(axesHelper);
 }
+
+createScene();

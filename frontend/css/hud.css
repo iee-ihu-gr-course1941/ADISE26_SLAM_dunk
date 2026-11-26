@@ -1,0 +1,9 @@
+.overlay{
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(280px, 45vw, 750px);
+  min-height: 10%;
+  padding: 0.75rem 1.5rem;
+}

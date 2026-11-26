@@ -37,6 +37,10 @@ const handleLocation = async () => {
     window.initializeLobbies();
   }
 
+  if(path === "/game" && window.createScene){
+    window.createScene();
+  }
+
   //το fit.js ξαναπροσαρμοζει την νεα σελιδα στο παραθυρο
   if (window.fitSetup) {
     window.fitSetup();
