@@ -12,7 +12,8 @@ const routes = {
   "/lobbies": "/pages/lobbies.html",
   "/profile": "/pages/profile.html",
   "/leaderboard": "/pages/leaderboard.html",
-  "/game": "/pages/game.html"
+  "/game": "/pages/game.html",
+  "/menu": "/pages/menu.html",
 };
 
 const handleLocation = async () => {
@@ -36,11 +37,14 @@ const handleLocation = async () => {
   if(path === "/lobbies" && window.initializeLobbies){
     window.initializeLobbies();
   }
-
+  //οταν ανοιγει το main menu συνδεουμε τα κουμπια του
+  if (path === "/menu" && window.initMenu) {
+    window.initMenu();
+  }
+  //Otan anoigei to game scene tha kanei render, create kai topothetisi ton paikton mesa sto game
   if(path === "/game" && window.createScene){
     window.createScene();
   }
-
   //το fit.js ξαναπροσαρμοζει την νεα σελιδα στο παραθυρο
   if (window.fitSetup) {
     window.fitSetup();

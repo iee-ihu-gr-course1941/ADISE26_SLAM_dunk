@@ -1,0 +1,21 @@
+<!--το main menu που ανοιγει μετα το login-->
+<link rel="stylesheet" href="/css/menu.css" />
+<div id="main-menu" class="menu-page">
+  <img src="/css/images/tree-branch-onitama.png" class="menu-branch-onitama" alt="" />
+  <img src="/css/images/temple-with-branches.png" class="menu-temple" alt="" />
+  <img src="/css/images/tree-with-braches.png" class="menu-tree" alt="" />
+  <img src="/css/images/tree-branch-right.png" class="menu-branch-right" alt="" />
+  <img src="/css/images/onitama-logo.png" class="menu-logo" alt="Onitama" />
+  <p class="menu-subtitle">ΑΔΙΣΕ-2027</p>
+
+  <!--τα links αλλαζουν σελιδα μεσω του router (τα listeners μπαινουν στο menu.js)-->
+  <nav class="menu-buttons">
+    <a href="/lobbies" id="find-lobby-link" class="menu-button">Play</a>
+    <a href="/profile" id="profile-link" class="menu-button">Profile</a>
+    <a href="/leaderboard" id="leaderboard-link" class="menu-button">Leaderboard</a>
+    <!--το Settings θα γινει αργοτερα-->
+    <button type="button" id="settings-button" class="menu-button">Settings</button>
+    <!--το Exit κανει logout και γυρναει στην αρχικη-->
+    <button type="button" id="exit-button" class="menu-button">Exit</button>
+  </nav>
+</div>
