@@ -7,9 +7,21 @@ function collectImages() {
   });
 }
 let images = collectImages();
+//Selides pou den tha efarmostei to fit
+const noFitPages = ["/game","/lobbies"];
 
 function fit() {
   if (!window.innerWidth || !window.innerHeight) return;
+  //If case gia oses selides exoun custom css gia to resizing
+  if(noFitPages.includes(window.location.pathname)){
+    page.style.transform = "none";
+    page.style.width = "100vw";
+    page.style.height = "100vh";
+    return;
+  }
+  //efarmogh ton diastaseon ths fit.js
+  page.style.width = "1920px";
+  page.style.height = "1080px";
   const scale = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
   const x = (window.innerWidth - 1920 * scale) / 2;
   const y = (window.innerHeight - 1080 * scale) / 2;

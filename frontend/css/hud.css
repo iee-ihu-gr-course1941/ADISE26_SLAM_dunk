@@ -19,7 +19,7 @@
   overflow: hidden;
 }
 
-.inlobby{
+.in-lobby{
   flex: 1;
   display: flex;
   justify-content: flex-end;
@@ -89,10 +89,10 @@
 }
 
 .match-score{
-  flex: 1 1 0;
-  min-width: 0;
-  display: flex;
-  align-items: center;
+  flex: 0 0 auto;
+  font-size: 1.5rem;
+  font-weight: 700;
+  white-space: nowrap;
 }
 
 .playerred-username{
