@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+import { createBoardBlocks } from './createBoardBlocks';
 
 function createScene(){
   //to div mesa sto opoio tha einai to game scene mas
@@ -45,6 +46,9 @@ function createScene(){
 
     const axesHelper = new THREE.AxesHelper(5);
     scene.add(axesHelper);
+
+    const boardBlocks = createBoardBlocks();
+    scene.add(boardBlocks);
 
     const renderloop = () => {
       controls.update(); //Poly sos, an theloume na kanoume smooth ta orbit controls prepei na kanoume thn update function tous
