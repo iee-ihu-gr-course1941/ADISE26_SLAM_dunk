@@ -3,18 +3,20 @@
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: clamp(280px, 45vw, 750px);
+  width: clamp(320px, 48vw, 820px);
   min-height: 10%;
-  padding: 0.75rem 1.5rem;
+  padding: 0.85rem 1.5rem;
   gap: 1.5rem;
   box-sizing: border-box;
-  background-color: rgba(24,24,24,0.7);
+  background-color: rgba(18,18,22,0.75);
   backdrop-filter: blur(4px);
-  color: white;
+  color: #f5f5f7;
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-radius: 0 0 0.75rem 0.75rem;
+  border-radius: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
   z-index: 10;
   overflow: hidden;
 }
@@ -160,10 +162,14 @@
 
 .game-info{
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-size: 18px;
+  font-size: 0.95rem;
   font-weight: 400;
-  color: white;
+  color: #f5f5f7;
   flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  min-width: 0;
 }
 
 #utility-hud{
