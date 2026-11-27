@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 console.log(THREE);
-window.createScene = createScene;
+
 function createScene(){
   //to div mesa sto opoio tha einai to game scene mas
   //einai anejarthto apo alla divs pou tuxon na mpoune mesa sto game scene
@@ -8,6 +8,7 @@ function createScene(){
     if(!canvas){
       return;
     }
+    console.log(canvas);
   //XRHSHMA CONSTANTS EDO PANO
     const PAWNS_COLOR = {
         RED: "#C41E3A", //Red player piece color
@@ -25,8 +26,9 @@ function createScene(){
     );
     //oi times einai FOV, oi diastaseis, to near kai to far clipping plane
     camera.position.z = 5; //to position einai idiothta tou Object3D superclass thn opoia thn klhronomoun ola ta antikeimena ths threejs
-    camera.position.y = 7; //exei xrhsimes idiothtes opos x,y,z
-    camera.position.x = 10; //auta mas epitrepoun na orisoume tis suntetagmenes x,y,z enos antikeimenou to opoio klhronomei thn Object3D
+    camera.position.y = 5; //exei xrhsimes idiothtes opos x,y,z
+    camera.position.x = 5; //auta mas epitrepoun na orisoume tis suntetagmenes x,y,z enos antikeimenou to opoio klhronomei thn Object3D
+    camera.lookAt(0,0,0); //Xrhsimh idiothta cameras gia na thn baloume na koitaei ekei pou theloume arxika
     scene.add(camera); //epeita to camera instance mas prepei na mpei sto scene
 
     //Gia na kanoume render mia skhnh prepei na baloume kai ena renderer object
@@ -41,6 +43,20 @@ function createScene(){
 
     const axesHelper = new THREE.AxesHelper(5);
     scene.add(axesHelper);
+
+    const cubeGeometry = new THREE.BoxGeometry(1,1,1);
+    const cubeMaterial = new THREE.MeshBasicMaterial({color: 'green'});
+    const cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
+    scene.add(cube);
+
+    const renderloop = () => {
+      renderer.render(scene, camera);
+      window.requestAnimationFrame(renderloop);
+    }
+    renderloop();
 }
 
-createScene();
+window.createScene = createScene;
+window.addEventListener('DOMContentLoaded', () => {
+  window.createScene();
+});

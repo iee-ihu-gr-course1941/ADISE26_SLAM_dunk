@@ -5,12 +5,11 @@ let listOfLobbies;
 let errorTimeout = null;
 let exists;
 window.initializeLobbies = initializeLobbies;
-$(document).ready(getLobbies);
 const storedUser = sessionStorage.getItem("token"); 
 let token = JSON.parse(storedUser);
 
 function initializeLobbies(){
-  listOfLobbies = $("#list-lobbies");
+  listOfLobbies = document.getElementById("list-lobbies");
   if(!listOfLobbies){
     return;
   }
