@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-console.log(THREE);
+import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 
 function createScene(){
   //to div mesa sto opoio tha einai to game scene mas
@@ -30,6 +30,8 @@ function createScene(){
     camera.position.x = 5; //auta mas epitrepoun na orisoume tis suntetagmenes x,y,z enos antikeimenou to opoio klhronomei thn Object3D
     camera.lookAt(0,0,0); //Xrhsimh idiothta cameras gia na thn baloume na koitaei ekei pou theloume arxika
     scene.add(camera); //epeita to camera instance mas prepei na mpei sto scene
+
+    const controls = new OrbitControls(camera, canvas);
 
     //Gia na kanoume render mia skhnh prepei na baloume kai ena renderer object
     //Parakato dhmiourgoume ena instance tou renderer object ths Three.JS
