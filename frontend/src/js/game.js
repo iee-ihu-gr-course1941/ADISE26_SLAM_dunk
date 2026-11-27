@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { createBoardBlocks } from '../game-files/createBoardBlocks';
+import { createGrid } from '../game-files/createBoardGrid';
 import { createAmbientLights, createSun } from '../game-files/lighting';
 
 function createScene(){
@@ -50,12 +51,14 @@ function createScene(){
 
     const boardBlocks = createBoardBlocks();
     scene.add(boardBlocks);
+    createGrid(scene);
 
     const ambience = createAmbientLights();
     const sun = createSun();
     scene.add(ambience);
     scene.add(sun);
 
+  
     const renderloop = () => {
       controls.update(); //Poly sos, an theloume na kanoume smooth ta orbit controls prepei na kanoume thn update function tous
       renderer.render(scene, camera);
