@@ -256,4 +256,46 @@
     gap: 0.75rem;
     border-radius: 12px;
   }
+
+  #utility-hud {
+    top: 12px;
+    left: 12px;
+    padding: 0.4rem;
+  }
+
+  .game-info {
+    gap: 0.75rem;
+  }
+
+   #lobby-heading {
+    display: none;
+  }
+
+   .currently-playing {
+    padding: 0.3rem 0.7rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 1200px){
+  .overlay {
+    width: clamp(320px, 55vw, 760px);
+  }
+}
+
+@media (max-width: 1024px){
+  .overlay {
+    width: clamp(300px, 70vw, 720px);
+    padding: 0.75rem 1.25rem;
+    gap: 1rem;
+  }
+
+   .game-info {
+    gap: 1rem;
+  }
+
+  .currently-playing {
+    padding: 0.35rem 0.8rem;
+    font-size: 0.85rem;
+  }
 }
