@@ -37,6 +37,10 @@
   justify-content: flex-end;
 }
 
+#leave-lobby-button,#start-game-button{
+  
+}
+
 #leave-lobby-button{
   display: inline-block;
   padding: 6px 12px;
@@ -141,7 +145,8 @@
   height: 25px;
   border-radius: 50%;
   flex-shrink: 0;
-  background-color: #3a9be8;
+  background: #4a9eff;
+  
 }
 
 .blue-player-info{
@@ -150,7 +155,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.25rem 0.5rem;
+    padding: 0.35rem 0.55rem;
   border-radius: 8px;
   transition: background-color 0.2s ease;
 }
@@ -161,9 +166,14 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.25rem 0.5rem;
+  padding: 0.35rem 0.55rem;
   border-radius: 8px;
   transition: background-color 0.2s ease;
+}
+
+.blue-player-info:hover,.red-player-info:hover{
+  background: rgba(255, 255, 255, 0.05);
+  cursor: pointer;
 }
 
 .banner-color-red{
@@ -171,7 +181,7 @@
   height: 25px;
   border-radius: 50%;
   flex-shrink: 0;
-  background-color: #ef4a2a;
+  background: #d60700;
 }
 
 .game-settings{
