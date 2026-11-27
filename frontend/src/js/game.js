@@ -52,7 +52,7 @@ function createScene(){
     scene.add(cube);
 
     const renderloop = () => {
-      controls.update();
+      controls.update(); //Poly sos, an theloume na kanoume smooth ta orbit controls prepei na kanoume thn update function tous
       renderer.render(scene, camera);
       window.requestAnimationFrame(renderloop);
     }
