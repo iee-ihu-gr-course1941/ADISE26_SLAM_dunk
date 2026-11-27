@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
-import { createBoardBlocks } from './createBoardBlocks';
+import { createBoardBlocks } from '../game-files/createBoardBlocks';
 
 function createScene(){
   //to div mesa sto opoio tha einai to game scene mas
