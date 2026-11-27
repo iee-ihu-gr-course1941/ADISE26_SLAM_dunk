@@ -32,7 +32,7 @@ function createScene(){
     scene.add(camera); //epeita to camera instance mas prepei na mpei sto scene
 
     const controls = new OrbitControls(camera, canvas);
-
+    controls.enableDamping = true;
     //Gia na kanoume render mia skhnh prepei na baloume kai ena renderer object
     //Parakato dhmiourgoume ena instance tou renderer object ths Three.JS
     const renderer = new THREE.WebGLRenderer({
@@ -52,6 +52,7 @@ function createScene(){
     scene.add(cube);
 
     const renderloop = () => {
+      controls.update();
       renderer.render(scene, camera);
       window.requestAnimationFrame(renderloop);
     }
