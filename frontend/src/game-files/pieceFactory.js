@@ -2,7 +2,7 @@ import * as THREE from 'three';
 console.log(THREE);
 
 const pieces = {
-    "pawn-master":() => {
+    "pawn-master":(color,x,y,z) => {
       const master = new THREE.Group();
       const hitboxGeometry = new THREE.ConeGeometry(0.4,2,32);
       const hitboxMaterial = new THREE.MeshBasicMaterial({
@@ -11,6 +11,24 @@ const pieces = {
       });
       const hitbox = new THREE.Mesh(hitboxGeometry,hitboxMaterial);
       master.add(hitbox);
+      const masterPawnGeometry = new THREE.ConeGeometry();
+      const masterPawnMaterial = new THREE.MeshStandardMaterial({
+          color: color,
+          side: THREE.DoubleSide
+      });
+      const masterPawn = new THREE.Mesh(masterPawnGeometry, masterPawnMaterial);
+      masterPawn.castShadow = true;
+      master.add(masterPawn);
+      master.position.set(x,y,z);
+      master.userData = {
+          id: "pawn-master",
+          x: x,
+          y: y,
+          z: z,
+          name: "master",
+          draggable: true
+      };
+      return master;
     },
     "pawn-student":() => {
 
