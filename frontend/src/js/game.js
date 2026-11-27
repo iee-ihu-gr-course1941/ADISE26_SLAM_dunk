@@ -56,6 +56,13 @@ function createScene(){
       renderer.render(scene, camera);
       window.requestAnimationFrame(renderloop);
     }
+
+    window.addEventListener("resize", () =>{
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+    
     renderloop();
 }
 
