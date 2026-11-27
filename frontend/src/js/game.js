@@ -46,11 +46,6 @@ function createScene(){
     const axesHelper = new THREE.AxesHelper(5);
     scene.add(axesHelper);
 
-    const cubeGeometry = new THREE.BoxGeometry(1,1,1);
-    const cubeMaterial = new THREE.MeshBasicMaterial({color: 'green'});
-    const cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
-    scene.add(cube);
-
     const renderloop = () => {
       controls.update(); //Poly sos, an theloume na kanoume smooth ta orbit controls prepei na kanoume thn update function tous
       renderer.render(scene, camera);
@@ -62,7 +57,7 @@ function createScene(){
       camera.updateProjectionMatrix();
       renderer.setSize(window.innerWidth, window.innerHeight);
     });
-    
+
     renderloop();
 }
 
