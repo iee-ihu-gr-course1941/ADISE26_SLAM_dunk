@@ -60,4 +60,12 @@ const pieces = {
     }
 };
 
-export function createPieces(){}
+export function createPieces(assetId,color,x,y,z){
+  if(assetId in pieces){
+    return pieces[assetId](color,x,y,z);
+  }
+  else{
+    console.log("Not a piece of the game");
+    return undefined;
+  }
+}
