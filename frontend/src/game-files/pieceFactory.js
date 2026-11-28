@@ -30,8 +30,33 @@ const pieces = {
       };
       return master;
     },
-    "pawn-student":() => {
-
+    "pawn-student":(color,x,y,z) => {
+      const student = new THREE.Group();
+      const hitboxGeometry = new THREE.ConeGeometry(0.4,2,32);
+      const hitboxMaterial = new THREE.MeshBasicMaterial({
+        visible: true,
+        wireframe: true
+      });
+      const hitbox = new THREE.Mesh(hitboxGeometry,hitboxMaterial);
+      student.add(hitbox);
+      const studentPawnGeometry = new THREE.ConeGeometry();
+      const studentPawnMaterial = new THREE.MeshStandardMaterial({
+          color: color,
+          side: THREE.DoubleSide
+      });
+      const studentPawn = new THREE.Mesh(studentPawnGeometry, studentPawnMaterial);
+      studentPawn.castShadow = true;
+      student.add(studentPawn);
+      student.position.set(x,y,z);
+      student.userData = {
+          id: "pawn-student",
+          x: x,
+          y: y,
+          z: z,
+          name: "student",
+          draggable: true
+      };
+      return student;
     }
 };
 
